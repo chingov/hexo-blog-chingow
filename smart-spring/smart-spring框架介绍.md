@@ -1,4 +1,4 @@
-## samrt-spirng框架介绍
+## smart-spring框架介绍
 ### 框架的背景
 
 > 在开发一个项目之前，搭建项目、引入依赖、配置框架这些基础活自然不用多说，通常为了加快项目的开发进度还需要封装一些常用的类和工具，比如统一的响应结果封装、统一的异常处理、接口签名认证、基础的增删改差方法封装、基础代码生成工具等等，有了这些项目才能开工。<br>
@@ -8,18 +8,18 @@
 > 框架的意义在于统一格式，减少重复编码，降低出错概率，提供必要的公共功能。
 
 ### 主要包括以下模块
-#### smart-dependencies
+#### smartcity-dependencies
 > 预定义主要依赖开源jar包的版本，构建插件的版本和配置，环境配置等
     
-#### smart-core
+#### smartcity-core
 > 公共核心的Core包，定义公共的返回、异常、分页等类型以及工具类等
     
-#### smart-support
+#### smartcity-support
 > 支撑公共功能，缓存处理、https请求、定时任务等
     
-#### smart-rest
+#### smartcity-app-core
 > 基于jersey框架的封装
 
-#### smart-web
+#### smartcity-web-core
 > 基于spring-mvc的封装
 
