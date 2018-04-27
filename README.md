@@ -12,13 +12,13 @@
 .
 |-- LICENSE
 |-- README.md
-|-- smart-spring
+|-- smartcity
 |   |-- 框架介绍.md
-|   |-- 接口说明.md
-|   |-- 版本日志.md
 |   |-- 开发指南.md
 |   |-- 开发说明.md
-|   `-- 常见问题.md
+|   |-- 接口说明.md
+|   |-- 常见问题.md
+|   `-- 版本日志.md
 |-- res
 `-- others
     `-- other.md
