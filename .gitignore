@@ -17,7 +17,7 @@ target
 #node
 db.json
 yarn.lock
-node_moudules/
+node_modules/
 public/
 .deploy*/
 source/_drafts/*
