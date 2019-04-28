@@ -14,5 +14,25 @@
 # java target#
 target 
 
+#node
+db.json
+yarn.lock
+node_moudules/
+public/
+.deploy*/
+source/_drafts/*
+
+#next
+themes/next/source/lib/*
+themes/next/source/lib/font-awesome/less/
+themes/next/source/lib/font-awesome/scss/
+!themes/next/source/lib/font-awesome/*
+!themes/next/source/lib/jquery/
+!themes/next/source/lib/velocity/
+
+themes/next/source/lib/ua-parser-js/*
+!themes/next/source/lib/ua-parser-js/dist/
+
+
 # virtual machine crash logs, see http://www.java.com/en/download/help/error_hotspot.xml
 hs_err_pid*
