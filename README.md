@@ -1,27 +1,17 @@
-# learn-markdown
+# Hexo-Blog-Chingow
 
-本仓库下存放个人学习心得和总结的源文件。持续更新，欢迎 `star`。
+   [![NPM version](https://badge.fury.io/js/hexo.svg)](https://badge.fury.io/js/hexo)   [![Hexo version](https://img.shields.io/badge/hexo-%3D%203.8.0-blue.svg)](http://hexo.io) 
 
-如果大家觉得那里写的不合适的可以给我提 `Issue`
+A fast, simple & powerful blog framework, powered by [Node.js](https://nodejs.org).
 
----
+Welcome visit my blog [https://www.chingow.cn](https://www.chingow.cn).
 
-## 目录简介
+## Installation
 
-```tree
-.
-|-- LICENSE
-|-- README.md
-|-- smartcity
-|   |-- 框架介绍.md
-|   |-- 开发指南.md
-|   |-- 开发说明.md
-|   |-- 接口说明.md
-|   |-- 常见问题.md
-|   `-- 版本日志.md
-|-- res
-`-- others
-    `-- other.md
-
+``` bash
+$ npm install hexo-cli -g
 ```
 
+## License
+
+MIT
