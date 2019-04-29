@@ -1,5 +1,7 @@
 ---
-title: smartcity框架 -- 06.版本日志
+title: smartcity框架 -- 06.升级计划
+copyright: true
+related_posts: true
 categories: 框架
 tags:
   - smartcity
@@ -7,13 +9,13 @@ tags:
 abbrlink: 521b8a35
 date: 2018-04-18 14:50:05
 ---
-## 版本日志
 ### *V 0.5.0-SNAPSHOT* 
     初始化版本，完成时间 2017-07-20
 * 技术选型落地，规范开发流程和项目结构
 * 在`pom.xml`里预定义常用开源组件依赖版本
-* 拦截`Response`的返回值，自动封装成 [Result](https://upload-images.jianshu.io/upload_images/1720399-ef517a5be56903e8.png) 
+* 拦截`Response`的返回值，自动封装成 [Result](https://ws1.sinaimg.cn/large/006tNc79ly1g2jvhtn6yqj30ts0l8tb1.jpg) 
 * 拦截`RuntimeException`异常，统一处理自动封装
+<!-- more -->
 * 融合 *Hibernate Validator* 验证框架，简化参数校验流程
 * 初始化常用工具类，包含字符处理、集合处理、参数验证、时间格式、Json处理、SQL过滤等
 

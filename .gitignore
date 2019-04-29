@@ -29,6 +29,8 @@ themes/next/source/lib/font-awesome/scss/
 !themes/next/source/lib/font-awesome/*
 !themes/next/source/lib/jquery/
 !themes/next/source/lib/velocity/
+!themes/next/source/lib/canvas-ribbon/
+!themes/next/source/lib/pace/
 
 themes/next/source/lib/ua-parser-js/*
 !themes/next/source/lib/ua-parser-js/dist/

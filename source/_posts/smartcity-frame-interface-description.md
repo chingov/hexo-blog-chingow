@@ -1,5 +1,7 @@
 ---
 title: smartcity框架 -- 04.接口说明
+copyright: true
+related_posts: true
 categories: 框架
 tags:
   - smartcity
@@ -7,8 +9,6 @@ tags:
 abbrlink: 79afe3c1
 date: 2018-04-18 15:11:31
 ---
-## 接口说明
-
 ### 工具接口说明
 #### DateUtil
 时间转换工具类（com.xxx.core.util.DateUtil）
@@ -23,6 +23,7 @@ date: 2018-04-18 15:11:31
 | static | String	| DATE_FORMAT_YYYY_MM_DD_HH_MM_SS | yyyy-MM-dd HH:mm:ss |
 | static | String	| DATE_FORMAT_YYYYMMDD | yyyyMMdd |
 | static | String	| DATE_FORMAT_YYYYMMDDHHMMSS | yyyyMMddHHmmss |
+<!-- more -->
 
 * 方法概要
 

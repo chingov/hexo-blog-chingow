@@ -1,5 +1,7 @@
 ---
 title: smartcity框架 -- 05.常见问题
+copyright: true
+related_posts: true
 categories: 框架
 tags:
   - smartcity
@@ -7,15 +9,12 @@ tags:
 abbrlink: bdc7564d
 date: 2018-04-18 14:56:15
 ---
-### 常见问题
----
-
 #### Q : 返回值 *code* 400405
 *A* : GET/POST请求使用错误。 
 
 ---
 #### Q : 消费者调用了别人的提供者服务，导致调试困难
-*A* : 这是怎么造成的呢？服务版本号设置是`dubbo.service.version= 0.5_${user.name}`，<br>只要`user.name`不同，理论上是不会存在交叉调用情况的；<br> 但这个`user.name`其实是操作系统当前登陆的用户名，大多数人都是Administrator用户登陆的，<br> 因此会出现版本号相同的情况，dubbo默认的负载均衡策略为Random Loadbalance（随机均衡算法），此时就有可能调用到其他人的服务了。<br>怎样避免这种情况发生呢？修改 user.name
+*A* : 这是怎么造成的呢？<!-- more -->服务版本号设置是`dubbo.service.version= 0.5_${user.name}`，<br>只要`user.name`不同，理论上是不会存在交叉调用情况的；<br> 但这个`user.name`其实是操作系统当前登陆的用户名，大多数人都是Administrator用户登陆的，<br> 因此会出现版本号相同的情况，dubbo默认的负载均衡策略为Random Loadbalance（随机均衡算法），此时就有可能调用到其他人的服务了。<br>怎样避免这种情况发生呢？修改 user.name
 
 ``` text
 找到IDEA的安装目录，比如 C:\Program Files\JetBrains\IntelliJ IDEA 2017.2.3\bin 

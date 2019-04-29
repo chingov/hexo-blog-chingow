@@ -1,9 +1,8 @@
 ---
 title: {{ title }}
 copyright: true
-reward: true  
-rating: true
 related_posts: false
-tags:
-categories:
+categories: 
+tags: 
+date: {{ date }}s
 ---
