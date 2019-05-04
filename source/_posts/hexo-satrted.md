@@ -76,8 +76,8 @@ $ hexo server 		# 在本地服务器运行
 ``` bash
 $ hexo g 	# 等同于hexo generate
 $ hexo s 	# 等同于hexo server
-$ hexo p 	# 等同于hexo port
-$ hexo d 	# 等同于hexo deploy # 部署
+$ hexo p 	# 等同于hexo port 
+$ hexo d 	# 等同于hexo deploy 
 ```
 当本地不想使用默认的4000端口时（比如在服务器上，默认使用80端口），可以使用 port 命令更改启动端口
 另外，**hexo**支持命令合并，比方说 生成静态文件 → 本地启动80端口，我们可以执行
