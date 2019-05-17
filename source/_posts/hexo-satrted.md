@@ -1,11 +1,12 @@
 ---
-title: Hexo 搭建个人博客：基础篇
+title: Hexo 搭建个人博客：基础安装
 copyright: true
 related_posts: false
 abbrlink: ae8c6a29
 categories: 博客
 tags: Hexo
 ---
+![题图](https://ws4.sinaimg.cn/large/006tNc79ly1g34t70mgujj327a0kigo6.jpg)
 
 关于如何搭建Hexo博客的文章已经有很多人写过了，并且有的大佬已经写的很深刻很到位了，为什么还要重复写一遍呢？直到我看到了这位同学的博客 [yearito](yearito.cn) **（ ps：本站的建站优化大都参考自这里）**，觉得说的很对
 

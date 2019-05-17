@@ -20,7 +20,6 @@ yarn.lock
 node_modules/
 public/
 .deploy*/
-source/_drafts/*
 
 #next
 themes/next/source/lib/*
