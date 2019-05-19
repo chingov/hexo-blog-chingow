@@ -1,1 +1,60 @@
 // Custom styles.
+
+// 侧边栏放在左边
+.sidebar-toggle {
+  left: 30px;
+}
+
+.sidebar {
+  left: 0px;
+}
+
+//窗口效果相关样式
+.sidebar {
+  box-shadow: none;
+}
+
+// Next.Muse中为Header和Footer添加背景色
+#header, #footer {
+  background-color: rgb(245, 245, 245);
+}
+
+//防止sidebar和footer同时开启动效时堆叠异常
+#sidebar, header {
+  z-index: 1 !important;
+}
+
+//防止挡住页末文章的阅读全文按钮
+.main {
+  padding-bottom: 30px;
+}
+
+// Mist主题下自定义样式
+if hexo-config('scheme') == "Mist" {
+  .site-meta {
+    float: none;
+  }
+
+  .footer-inner {
+    text-align: center;
+  }
+
+  /*.menu {
+    text-align: right;
+  }*/
+}
+
+// Muse主题下自定义样式
+if hexo-config('scheme') == "Muse" {
+  .site-meta {
+    .brand {
+      color: rgb(34, 34, 34);
+      background: none;
+    }
+
+    .site-title {
+      font-size: 24px;
+      font-weight: bold;
+    }
+  }
+}

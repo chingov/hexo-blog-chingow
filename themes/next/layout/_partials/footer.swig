@@ -1,14 +1,13 @@
 <div class="copyright">{#
 #}{% set current = date(Date.now(), "YYYY") %}{#
-#}{% if theme.footer.beian.enable %}{#
-#}  {{ next_url('http://www.beian.miit.gov.cn', theme.footer.beian.icp + ' ') }}{#
-#}{% endif %}{#
-#}&copy; {% if theme.footer.since and theme.footer.since != current %}{{ theme.footer.since }} – {% endif %}{#
+#}&copy; {% if theme.footer.since and theme.footer.since != current %}{{ theme.footer.since }}-{% endif %}{#
 #}<span itemprop="copyrightYear">{{ current }}</span>
   <span class="with-love" id="animate">
     <i class="fa fa-{{ theme.footer.icon.name }}"></i>
   </span>
   <span class="author" itemprop="copyrightHolder">{{ theme.footer.copyright || author }}</span>
+
+  <span class="post-meta-divider footer-ages-icon"> | </span>
 
   {% if config.symbols_count_time.total_symbols %}
     <span class="post-meta-divider">|</span>
@@ -36,6 +35,10 @@
   #}</span>
   {% endif %}
 </div>
+
+{% if theme.seo %}
+  {% set nofollow = ' rel="external nofollow"' %}
+{% endif %}
 
 {% if theme.footer.powered.enable %}
   <div class="powered-by">{#

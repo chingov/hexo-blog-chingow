@@ -60,6 +60,19 @@
       <div class="footer-inner">
         {{ partial('_partials/footer.swig', {}, {cache: theme.cache.enable}) }}
         {% include '_third-party/analytics/analytics-with-widget.swig' %}
+        
+        <div class="footer-custom">
+            {% if theme.footer.beian.enable %}{#
+          #}{{ next_url('http://www.beian.miit.gov.cn', theme.footer.beian.icp + ' ') }}{#
+          #}{% endif %}
+          {% if theme.footer.beian.enable and theme.footer.gongan.enable %}
+            <span class="post-meta-divider">|</span>
+          {% endif %}
+          {% if theme.footer.gongan.enable %}{#
+          #} <span style="padding-left:25px;background:url(/images/beian.png) no-repeat left center" rel="nofollow">
+          {{ next_url('http://www.beian.gov.cn/portal/registerSystemInfo?recordcode='+theme.footer.gongan.num, theme.footer.gongan.local+'公网安备'+theme.footer.gongan.num+'号' ) }}</span>{#
+          #}{% endif %}
+        </div>
         {% block footer %}{% endblock %}
       </div>
     </footer>
@@ -122,5 +135,7 @@
   {% include '_third-party/copy-code.swig' %}
   {% include '_third-party/chatra.swig' %}
   {% include '_third-party/tidio.swig' %}
+
+   {% include '_custom/custom.swig' %}
 </body>
 </html>
