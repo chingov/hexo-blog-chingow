@@ -27,7 +27,7 @@ Next主题内提供了很多功能来让内容更加丰富，本文介绍了如�
 
 为了便于创建新文章时更加便利，可以在hexo的`scaffolds`文件夹内创建模板文件，比如我创建的草稿模板
 
-``` markdown /scaffolds/draft.md
+``` markdown scaffolds/draft.md
 ---
 title: {{ title }}
 categories: 
@@ -268,19 +268,17 @@ Next中使用 [FontAwesome](https://fontawesome.com/v4.7.0/icons/) 作为图标�
 
 ``` yaml themes/next/_config.yml
 copy_button:
-	enable: true  # 开启代码复制功能
-	show_result: true  # 显示复制结果
+  enable: true  # 开启代码复制功能
+  show_result: true  # 显示复制结果
 ```
 
 ## 代码块显示和隐藏
 
-
+---
 
 ## 草稿和发布
 
- 传统建立文章方式
-
-一般我们都会使用 hexo new <title> 来建立文章，这种建立方法会将新文章建立在 source/_posts 目录下，当使用 hexo generate 编译文件时，会将其 HTML 结果编译在 public 目录下，之后` hexo server `将会把 public 目录下所有文章发布。
+一般我们都会使用` hexo new <title> `来建立文章，这种建立方法会将新文章建立在 source/_posts 目录下，当使用 hexo generate 编译文件时，会将其 HTML 结果编译在 public 目录下，之后` hexo server `将会把 public 目录下所有文章发布。
 
 **这种建立文章方式是有缺点的**
 写文章的人都知道，一篇文章从创作到发布需要经过多次润色，若我们的文章还在创作润色中，尚未编辑完成，执行` hexo server` 时也会随着一起发布，这样对读者是不友好的。
@@ -298,4 +296,4 @@ $ hexo s --draft	# 预览草稿文章
 $ hexo P <filename>	
 ```
 
-其中 <filename> 为不包含 md 后缀的文章名称。它的原理只是将文章从 source/_drafts 移动到 source/_posts 而已。
+其中 `<filename>` 为不包含 md 后缀的文章名称。它的原理只是将文章从 source/_drafts 移动到 source/_posts 而已。

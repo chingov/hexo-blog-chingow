@@ -108,16 +108,6 @@ local_search:
   unescape: false
 ```
 
-在**站点配置**文件中添加以下字段：
-
-``` yaml _config.yml
-search:
-  path: search.xml
-  field: post  # 指定搜索范围，可选 post | page | all
-  format: html  # 指定页面内容形式，可选 html | raw (Markdown) | excerpt | more
-  limit: 10000
-```
-
 搜索弹框的页边距有点点挤，在自定义样式文件中添加样式规则来增加页边距：
 
 ``` css themes\next\source\css\_custom\custom.styl
