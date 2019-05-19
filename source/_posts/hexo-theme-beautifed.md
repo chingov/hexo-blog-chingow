@@ -24,7 +24,8 @@ date: 2019-05-17 10:07:53
   <!--more-->
 
 ### Font
-前端的美化，可以做的比较多，比如修改字体、修改背景等等，首先修改主题配置文件 _config.yml里的配置`font`
+前端的美化，可以做的比较多，比如修改字体、修改背景等等。
+首先修改主题配置文件 _config.yml里的配置`font`：
 
 ``` diff themes/next/_config.yml
 font:
@@ -34,7 +35,9 @@ font:
 
 #### 修改字体
 
-微软雅黑太平常了 (lll￢ω￢)，浏览其他人网站的时候看到了一种很有科技感的字体 『**Monda**』，可以从 [frontyukle](https://www.fontyukle.net/cn/1,MONDA) 下载，然后在自服务器上安装字体。修改主题配置里的全局字体配置
+默认的字体是微软雅黑，有点审美疲劳了 (lll￢ω￢)，在浏览其他人网站的时候看到了一种很有科技感的字体 『**Monda**』，感觉还是不错的。如何应用到自己的博客呢？
+首先，可以从 [frontyukle](https://www.fontyukle.net/cn/1,MONDA) 下载字体文件，在服务器上安装。
+然后修改主题配置里的全局字体配置：
 
 ``` diff themes/next/_config.yml
 global:
@@ -52,7 +55,7 @@ global:
 $ git clone https://github.com/theme-next/theme-next-canvas-ribbon themes/next/source/lib/canvas_ribbon
 ```
 
-然后，修改主题配置文件 _config.yml 里的配置`canvas_ribbon`
+然后，修改主题配置文件 _config.yml 里的配置`canvas_ribbon`：
 
 ``` diff themes/next/_config.yml
 canvas_ribbon:
@@ -78,7 +81,7 @@ $ git clone https://github.com/theme-next/theme-next-pace themes/next/source/lib
 
 ####  fork github 标识
 
-修改主题配置文件 _config.yml 里的配置`github_banner`
+修改主题配置文件 _config.yml 里的配置`github_banner`：
 ``` diff themes/next/_config.yml
 github_banner:
 -  enable: false
@@ -175,7 +178,7 @@ mobile() {
 #### ICP备案和公安备案
 
 我们的网站已经有备案号了，但是应该如何添加备案号到博客最下面呢？
-首先，在主题配置文件 _config.yml 里的配置添加备案配置
+首先，在主题配置文件 _config.yml 里的配置添加备案配置：
 
 ``` diff themes/next/_config.yml
  # 这里打开备案信息，填写ICP备案号
@@ -230,7 +233,7 @@ mobile() {
 
 #### 显示网站的建站运行时间
 
-首先，先给网站添加建站时间。修改主题配置文件 _config.yml 里的配置`since` 
+首先，先给网站添加建站时间。修改主题配置文件 _config.yml 里的配置`since` ：
 ``` diff themes/next/_config.yml
 footer:
   # Specify the date when the site was setup. If not defined, current year will be used.
@@ -364,7 +367,7 @@ footer:
 
 #### 显示当前浏览进度
 
-在主题配置文件中修改`back2top`的`scrollpercent`
+在主题配置文件中修改`back2top`的`scrollpercent`：
 
 ``` diff themes\next\_config.yml
 back2top:
@@ -378,7 +381,7 @@ back2top:
 
 我们习惯了导航菜单在左边的格式，因此萌发了把主题侧边栏放在左侧的想法。
 Next 主题中 Pisces 和 Gemini 支持通过主题配置文件来将侧边栏置于左侧或右侧。
-修改主题配置文件 _config.yml 里的配置`sidebar` 
+修改主题配置文件 _config.yml 里的配置`sidebar` ：
 
 ``` diff  themes/next/_config.yml
 sidebar:
@@ -387,7 +390,7 @@ sidebar:
 -  #position: right
 ```
 
-而 Muse 和 Mist 则需要深度修改源码才能实现改变侧边栏位置。
+而 Muse 和 Mist 则需要深度修改源码才能实现改变侧边栏位置：
 
 ``` css themes/next/source/css/_custom/custom.styl
 .sidebar-toggle {
