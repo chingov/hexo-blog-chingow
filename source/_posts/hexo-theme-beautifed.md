@@ -93,7 +93,7 @@ github_banner:
 + 网站标题加粗和颜色修改
 
 在主题自定义样式文件中添加以下样式：
-``` html themes/next/sources/_custom/custom.styl
+``` css themes/next/sources/_custom/custom.styl
 //窗口效果相关样式
 .sidebar {
   box-shadow: none;
@@ -154,18 +154,17 @@ if hexo-config('scheme') == "Muse" {
 
 +     {% include '_custom/custom.swig' %}
     </body>
-  </html>
 ```
 
 调节移动端显示的高度
 ``` diff themes/next/source/css/_schemes/Muse/_menu.styl
 mobile() {
-		position: absolute;
-  	left: 0;
--  	top: 52px;
-+  	top: 95px;
-		margin: 0;
-		...
+	position: absolute;
+  left: 0;
+-  top: 52px;
++  top: 95px;
+  margin: 0;
+	...
 }
 ```
 
@@ -233,7 +232,7 @@ mobile() {
 
 首先，先给网站添加建站时间。修改主题配置文件 _config.yml 里的配置`since` 
 ``` diff themes/next/_config.yml
-	footer:
+footer:
   # Specify the date when the site was setup. If not defined, current year will be used.
 -  #since: 2015
 +  since: 2018	# 修改建站时间
@@ -260,7 +259,7 @@ mobile() {
 
 在语言配置文件里，添加表述文案`age`：
 ``` diff themes/next/languages/zh-CN.yml
-	footer:
+footer:
 +		age: 我已在此等候你
 ```
 
@@ -314,7 +313,7 @@ busuanzi_count:
 然后，在语言配置文件里，修改个性化表述文案：
 
 ``` diff themes/next/languages/zh-CN.yml
-	footer:
+footer:
 -		total_views: 总访问量
 - 	total_visitors: 总访客量
 + 	total_views: "历经 %s 次回眸才与你相遇"
@@ -372,9 +371,8 @@ back2top:
   	enable: true
   	sidebar: false
 -  	scrollpercent: false
-+	 	scrollpercent: true  #  浏览页面的时候显示当前浏览进度  
++  	scrollpercent: true  #  浏览页面的时候显示当前浏览进度  
 ```
-
 
 #### 侧边栏移到左边显示
 
