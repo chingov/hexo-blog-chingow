@@ -4,14 +4,15 @@ tags:
   - Hexo
   - Monda
   - 备案
+  - 不蒜子
 categories: 博客
-copyright: true
-related_posts: false
-abbrlink: c7372a12
 date: 2019-05-17 10:07:53
+copyright: true
+related_posts: true
+abbrlink: c7372a12
 ---
 
-本文介绍了在 Next 主题的基础上进行美化的方案，主要包括:
+本文介绍了在 Next 主题的基础上整体布局美化的方案，主要包括:
 
 + Font：字体、动态背景
 + Top：进度条、fork-github、菜单高度收缩
@@ -27,10 +28,9 @@ date: 2019-05-17 10:07:53
 前端的美化，可以做的比较多，比如修改字体、修改背景等等。
 首先修改主题配置文件 _config.yml里的配置`font`：
 
-``` diff themes/next/_config.yml
+``` yaml themes/next/_config.yml
 font:
-- enable: false
-+ enable: true	# 开启前端设置
+  enable: true  # 开启前端设置
 ```
 
 ### 修改字体
@@ -42,7 +42,7 @@ font:
 ``` diff themes/next/_config.yml
 global:
 - family: Lato
-+ family: Monda	# 设置Monda字体
++ family: Monda   # 设置Monda字体
 ```
 
 ### 设置三角丝带背景
@@ -57,12 +57,10 @@ $ git clone https://github.com/theme-next/theme-next-canvas-ribbon themes/next/s
 
 然后，修改主题配置文件 _config.yml 里的配置`canvas_ribbon`：
 
-``` diff themes/next/_config.yml
+``` yaml themes/next/_config.yml
 canvas_ribbon:
-- enable: false
-- size: 300
-+ enable: true	# 开启随机三角丝带背景
-+ size: 90	# 设置丝带宽度
+  enable: true	# 开启随机三角丝带背景
+  size: 90	# 设置丝带宽度
 ```
 
 ---
@@ -80,15 +78,14 @@ $ git clone https://github.com/theme-next/theme-next-pace themes/next/source/lib
 
 然后，修改主题配置文件 _config.yml 里的配置`pace` 改为 `true`，并从上面提供的样式中选择一种填入`pace_theme`中就可以了。
 
-### fork github 标识
+### 右上角的Github样式
 
 修改主题配置文件 _config.yml 里的配置`github_banner`：
 
-``` diff themes/next/_config.yml
+``` yaml themes/next/_config.yml
 github_banner:
--  enable: false
-+  enable: true
-+  permalink: https://github.com/yourname
+  enable: true
+  permalink: https://github.com/yourname
 ```
 
 ### 菜单显示
@@ -240,31 +237,28 @@ mobile() {
 
 首先，先给网站添加建站时间。修改主题配置文件 _config.yml 里的配置`since` ：
 
-``` diff themes/next/_config.yml
+``` yaml themes/next/_config.yml
 footer:
   # Specify the date when the site was setup. If not defined, current year will be used.
--  #since: 2015
-+  since: 2018  # 修改建站时间
+  since: 2018  # 修改建站时间
 
   # Icon between year and copyright info.
   icon:
     # `heart` is recommended with animation in red (#ff0000).
--    name: user
-+    name: heart  # 改成心型图标
+    name: heart  # 改成心型图标
     # Change the color of icon, using Hex Code.
--    color: "#808080"
-+    color: "#ff0000" # 改成红色图标
+    color: "#ff0000" # 改成红色图标
 
 ```
 
 此时，建站时间的 @since 就修改好了，接下来我们显示网站的运行时间（在这里我做了一些个性化文字显示，可供大家参考）。
 在主题配置文件 _config.yml 里的添加 `ages`配置：
 
-``` diff themes/next/_config.yml
-+  ages: # site running time
-+    enable: true
-+    birthday: 20190419
-+    color: "#1890ff"
+``` yaml themes/next/_config.yml
+  ages: # site running time
+    enable: true
+    birthday: 20190419    # 网站运行时间
+    color: "#1890ff"  
 ```
 
 在语言配置文件里，添加表述文案`age`：
@@ -313,10 +307,9 @@ footer:
 
 首先，在主题配置文件中打开不算子功能：
 
-``` diff themes\next\_config.yml
+``` yaml themes\next\_config.yml
 busuanzi_count:
--  enable: false
-+  enable: true
+  enable: true
   total_visitors: true   # 访客数
   total_visitors_icon: user
   total_views: true   # 访问量
@@ -370,6 +363,15 @@ footer:
 </div>
 ```
 
+在自定义样式文件中添加如下样式：
+
+``` css themes/next/source/css/_custom/custom.styl
+//修改不蒜子数据颜色
+.busuanzi-value {
+  color: #1890ff;
+}
+```
+
 ---
 
 ## Sidebar
@@ -378,12 +380,11 @@ footer:
 
 在主题配置文件中修改`back2top`的`scrollpercent`：
 
-``` diff themes\next\_config.yml
+``` yaml themes\next\_config.yml
 back2top:
   enable: true
   sidebar: false
--  scrollpercent: false
-+  scrollpercent: true  #  浏览页面的时候显示当前浏览进度  
+  scrollpercent: true  #  浏览页面的时候显示当前浏览进度  
 ```
 
 ### 侧边栏移到左边显示

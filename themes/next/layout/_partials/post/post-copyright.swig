@@ -10,6 +10,10 @@
 {% set ccURL = 'https://creativecommons.org/' + ccType %}
 
 <ul class="post-copyright">
+  <li class="post-copyright-title">
+    <strong>{{ __('post.copyright.title') + __('symbol.colon') }}</strong>{#
+    #}{{ post.title | default(config.title) }}{#
+  #}</li>
   <li class="post-copyright-author">
     <strong>{{ __('post.copyright.author') + __('symbol.colon') }} </strong>{#
   #}{{ post.author || author }}{#

@@ -49,38 +49,49 @@ rss:
 
 footer:
   # Specify the date when the site was setup. If not defined, current year will be used.
-  #since: 2015
+  since: 2018
 
   # Icon between year and copyright info.
   icon:
     # Icon name in fontawesome, see: https://fontawesome.com/v4.7.0/icons/
     # `heart` is recommended with animation in red (#ff0000).
-    name: user
+    name: heart
     # If you want to animate the icon, set it to true.
     animated: false
     # Change the color of icon, using Hex Code.
-    color: "#808080"
+    color: "#ff0000"
 
   # If not defined, `author` from Hexo main config will be used.
   copyright:
 
   powered:
     # Hexo link (Powered by Hexo).
-    enable: true
+    enable: false
     # Version info of Hexo after Hexo link (vX.X.X).
-    version: true
+    version: false
 
   theme:
     # Theme & scheme info link (Theme - NexT.scheme).
-    enable: true
+    enable: false
     # Version info of NexT after scheme info (vX.X.X).
-    version: true
+    version: false
 
   # Beian icp information for Chinese users. In China, every legal website should have a beian icp in website footer.
   # http://www.beian.miit.gov.cn
   beian:
-    enable: false
-    icp:
+    enable: true
+    icp: 鄂ICP证18014719号
+
+  # 这里是新加的内容，填写公安备案信息
+  gongan:
+    enable: true
+    local: 鄂
+    num: 42011102003178
+
+  ages: # site running time
+    enable: true
+    birthday: 20190419
+    color: "#1890ff"
 
   # Any custom text can be defined here.
   #custom_text: Hosted by <a href="https://pages.coding.me" class="theme-link" rel="noopener" target="_blank">Coding Pages</a>
@@ -92,15 +103,15 @@ footer:
 # CC licenses are available in 39 languages, where you can find the specific and correct abbreviation you need.
 # Valid values of language: deed.zh, deed.fr, deed.de, etc.
 creative_commons:
-  license: by-nc-sa
-  sidebar: false
-  post: false
-  language:
+  license: by-nc-sa  # 开启版权声明
+  sidebar: true # 侧边栏
+  post: true # post文章
+  language: zh-CN
 
 # `Follow me on GitHub` banner in the top-right corner.
 github_banner:
-  enable: false
-  permalink: https://github.com/yourname
+  enable: true
+  permalink: https://github.com/chingov
   title: Follow me on GitHub
 
 
@@ -158,10 +169,10 @@ baidu_push: false
 # External url should start with http:// or https://
 menu:
   home: / || home
-  #about: /about/ || user
-  #tags: /tags/ || tags
-  #categories: /categories/ || th
   archives: /archives/ || archive
+  categories: /categories/ || th
+  tags: /tags/ || tags
+  about: /about/ || user
   #schedule: /schedule/ || calendar
   #sitemap: /sitemap.xml || sitemap
   #commonweal: /404/ || heartbeat
@@ -197,9 +208,9 @@ site_state: true
 # Value before `||` delimeter is the target permalink.
 # Value after `||` delimeter is the name of FontAwesome icon. If icon (with or without delimeter) is not specified, globe icon will be loaded.
 social:
-  #GitHub: https://github.com/yourname || github
-  #E-Mail: mailto:yourname@gmail.com || envelope
-  #Weibo: https://weibo.com/yourname || weibo
+  GitHub: https://github.com/chingov || github
+  E-Mail: mailto:chingow2013@gmail.com || envelope
+  #Weibo: https://weibo.com/chingow || weibo
   #Google: https://plus.google.com/yourname || google
   #Twitter: https://twitter.com/yourname || twitter
   #FB Page: https://www.facebook.com/yourname || facebook
@@ -216,9 +227,9 @@ social_icons:
 
 # Blog rolls
 links_icon: link
-links_title: Links
-links_layout: block
-#links_layout: inline
+links_title: 友情链接
+# links_layout: block
+links_layout: inline
 links:
   #Title: http://example.com
 
@@ -227,9 +238,9 @@ avatar:
   # In theme directory (source/images): /images/avatar.gif
   # In site directory (source/uploads): /uploads/avatar.gif
   # You can also use other linking images.
-  url: #/images/avatar.gif
+  url: /images/avatar.png
   # If true, the avatar would be dispalyed in circle.
-  rounded: false
+  rounded: true
   # The value of opacity should be choose from 0 to 1 to set the opacity of the avatar.
   opacity: 1
   # If true, the avatar would be rotated with the cursor.
@@ -276,7 +287,7 @@ back2top:
   # Back to top in sidebar.
   sidebar: false
   # Scroll percent label in b2t button.
-  scrollpercent: false
+  scrollpercent: true  #  浏览页面的时候显示当前浏览进度
 
 # A button to open designated chat widget in sidebar.
 # Firstly, you need enable the chat service you want to activate its sidebar button.
@@ -311,7 +322,7 @@ excerpt_description: true
 # Automatically Excerpt (Not recommend).
 # Use <!-- more --> in the post to control excerpt accurately.
 auto_excerpt:
-  enable: false
+  enable: true  # 是否打开摘要
   length: 150
 
 # Read more button
@@ -320,19 +331,19 @@ read_more_btn: true
 
 # Post meta display settings
 post_meta:
-  item_text: true
-  created_at: true
+  item_text: true  # 显示文字说明
+  created_at: true  # 显示文章创建时间
   updated_at:
-    enable: true
-    another_day: true
-  categories: true
+    enable: false  # 文章修改时间
+    another_day: false  # 只有当修改时间和创建时间不是同一天的时候才显示
+  categories: true  # 分类信息
 
 # Post wordcount display settings
 # Dependencies: https://github.com/theme-next/hexo-symbols-count-time
 symbols_count_time:
-  separated_meta: true
-  item_text_post: true
-  item_text_total: false
+  separated_meta: true # 是否换行显示 字数统计 及 阅读时长
+  item_text_post: true # 文章 字数统计 阅读时长 使用图标 还是 文本表示
+  item_text_total: false # 博客底部统计 字数统计 阅读时长 使用图标 还是 文本表示
   awl: 4
   wpm: 275
 
@@ -341,15 +352,15 @@ codeblock:
   border_radius:
   # Add copy button on codeblock
   copy_button:
-    enable: false
+    enable: true  # 开启代码复制功能
     # Show text copy result
-    show_result: false
+    show_result: true  # 显示复制结果
     # Style: only 'flat' is currently available, leave it blank if you prefer default theme
     style:
 
 # Wechat Subscriber
 wechat_subscriber:
-  enable: false
+  enable: false # 文章底部显示微信二维码 
   #qcode: /path/to/your/wechatqcode e.g. /uploads/wechat-qcode.jpg
   #description: e.g. subscribe to my blog by scanning my public wechat account
 
@@ -359,7 +370,7 @@ reward_settings:
   # You can show or hide reward in a specific article throuth `reward: true | false` in Front Matter.
   enable: false
   animation: false
-  #comment: Donate comment here
+  #comment: 如果文章内容对你有帮助,您的支持将鼓励我继续创作！
 
 reward:
   #wechatpay: /images/wechatpay.png
@@ -368,16 +379,16 @@ reward:
 
 # Related popular posts
 # Dependencies: https://github.com/tea3/hexo-related-popular-posts
-related_posts:
-  enable: false
-  title: # custom header, leave empty to use the default one
+related_posts: # 相关文章推荐
+  enable: true
+  title: 相关文章推荐 # 属性的命名
   display_in_home: false
   params:
-    maxCount: 5
+    maxCount: 3
     #PPMixingRate: 0.0
     #isDate: false
     #isImage: false
-    #isExcerpt: false
+    isExcerpt: false
 
 # Post edit
 # Dependencies: https://github.com/hexojs/hexo-deployer-git
@@ -441,7 +452,7 @@ tagcloud:
 # ---------------------------------------------------------------
 
 font:
-  enable: false
+  enable: true # 开启前端设置
 
   # Uri of fonts host, e.g. //fonts.googleapis.com (Default).
   host:
@@ -454,7 +465,7 @@ font:
   # Global font settings used for all elements in <body>.
   global:
     external: true
-    family: Lato
+    family: Monda # 设置Monda字体
     size:
 
   # Font settings for Headlines (H1, H2, H3, H4, H5, H6).
@@ -824,7 +835,7 @@ firestore:
 # Show Views / Visitors of the website / page with busuanzi.
 # Get more information on http://ibruce.info/2015/04/04/busuanzi
 busuanzi_count:
-  enable: false
+  enable: true
   total_visitors: true
   total_visitors_icon: user
   total_views: true
@@ -852,19 +863,19 @@ algolia_search:
   hits:
     per_page: 10
   labels:
-    input_placeholder: Search for Posts
-    hits_empty: "We didn't find any results for the search: ${query}"
-    hits_stats: "${hits} results found in ${time} ms"
+    input_placeholder: 搜索文章内容
+    hits_empty: "无法找到相关结果: ${query}"
+    hits_stats: "${time} ms 内匹配到 ${hits} 条结果"
 
 # Local search
 # Dependencies: https://github.com/theme-next/hexo-generator-searchdb
-local_search:
-  enable: false
+local_search: 
+  enable: true # 开启站内搜索
   # If auto, trigger search by changing input.
   # If manual, trigger search by pressing enter key or search button.
-  trigger: auto
+  trigger: auto # 自动和手动触发
   # Show top n results per article, show all results by setting to -1
-  top_n_per_article: 1
+  top_n_per_article: 3
   # Unescape html strings to the readable one.
   unescape: false
 
@@ -906,12 +917,12 @@ note:
   #  - modern    bs-callout new (v2-v3) alert style.
   #  - flat      flat callout style with background, like on Mozilla or StackOverflow.
   #  - disabled  disable all CSS styles import of note tag.
-  style: simple
+  style: modern
   icons: false
   border_radius: 3
   # Offset lighter of background in % for modern and flat styles (modern: -12 | 12; flat: -18 | 6).
   # Offset also applied to label tag variables. This option can work with disabled note tag.
-  light_bg_offset: 0
+  light_bg_offset: -6
 
 # Tabs tag
 tabs:
@@ -970,7 +981,7 @@ motion:
 # Choose only one variant, do not need to install both.
 # To install 2.x: https://github.com/theme-next/theme-next-fancybox
 # To install 3.x: https://github.com/theme-next/theme-next-fancybox3
-fancybox: false
+fancybox: true
 
 # Polyfill to remove click delays on browsers with touch UIs.
 # Dependencies: https://github.com/theme-next/theme-next-fastclick
@@ -982,7 +993,7 @@ lazyload: false
 
 # Progress bar in the top during page loading.
 # Dependencies: https://github.com/theme-next/theme-next-pace
-pace: false
+pace: true  # 开启顶部进度条
 # Themes list:
 # pace-theme-big-counter | pace-theme-bounce | pace-theme-barber-shop | pace-theme-center-atom
 # pace-theme-center-circle | pace-theme-center-radar | pace-theme-center-simple | pace-theme-corner-indicator
@@ -1013,9 +1024,9 @@ canvas_sphere: false
 # size: The width of the ribbon.
 # alpha: The transparency of the ribbon.
 # zIndex: The display level of the ribbon.
-canvas_ribbon:
-  enable: false
-  size: 300
+canvas_ribbon: # 开启随机三角丝带背景
+  enable: true
+  size: 90
   alpha: 0.6
   zIndex: -1
 
@@ -1039,7 +1050,7 @@ vendors:
   # Example:
   # jquery: //cdn.jsdelivr.net/npm/jquery@2/dist/jquery.min.js
   # jquery: //cdnjs.cloudflare.com/ajax/libs/jquery/2.1.3/jquery.min.js
-  jquery:
+  jquery: //cdn.jsdelivr.net/npm/jquery@2.1.3/dist/jquery.min.js
 
   # Internal version: 2.1.5 & 3.5.7
   # See: https://fancyapps.com/fancybox
@@ -1209,3 +1220,8 @@ vendors:
 css: css
 js: js
 images: images
+
+
+# Online contact 
+daovoice: true
+daovoice_app_id: 3d64b7fd

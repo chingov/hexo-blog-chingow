@@ -1,7 +1,8 @@
 ---
 title: Hexo 搭建个人博客：基础安装
 copyright: true
-related_posts: false
+related_posts: true
+date: 2019-04-29 22:16:23
 abbrlink: ae8c6a29
 categories: 博客
 tags: Hexo

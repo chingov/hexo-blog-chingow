@@ -48,10 +48,10 @@ highlight:
   tab_replace:
 
 symbols_count_time:
-  symbols: true # 文章字数
-  time: true # 阅读时长
-  total_symbols: false # 所有文章总字数
-  total_time: false # 所有文章阅读中时长
+  symbols: true # 统计单篇文章字数
+  time: true # 估算单篇文章阅读时间
+  total_symbols: false # 统计站点总字数
+  total_time: false # 估算站点总阅读时间
   
 # Home page setting
 # path: Root path for your blogs index page. (default = '')
@@ -89,6 +89,3 @@ theme: next
 deploy:
   type:
 
-# Online contact 
-daovoice: true
-daovoice_app_id: 3d64b7fd

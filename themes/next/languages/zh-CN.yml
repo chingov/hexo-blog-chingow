@@ -36,18 +36,20 @@ post:
   copy_success: 复制成功
   copy_failure: 复制失败
   copyright:
-    author: 本文作者
-    link: 本文链接
-    license_title: 版权声明
-    license_content: "本博客所有文章除特别声明外，均采用 %s 许可协议。转载请注明出处！"
+    title : 本文标题
+    author: 文章作者
+    link: 原始链接
+    license_title: 许可协议
+    license_content: "本文章采用 %s 许可协议，转载请保留原文链接及作者。"
 page:
   totally: 共有
   tags: 标签
 footer:
   powered: "由 %s 强力驱动"
   theme: 主题
-  total_views: 总访问量
-  total_visitors: 总访客量
+  age: 我已在此等候你
+  total_views: "历经 %s 次回眸才与你相遇"
+  total_visitors: "我的第 %s 位朋友，"
 counter:
   tag_cloud:
     zero: 暂无标签

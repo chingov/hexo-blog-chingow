@@ -21,3 +21,5 @@ source/lib/font-awesome/scss/
 !source/lib/canvas-ribbon/
 
 !source/lib/pace/
+
+!source/lib/fancybox/
