@@ -11,7 +11,6 @@ abbrlink: c7372a12
 date: 2019-05-17 10:07:53
 ---
 
-
 本文介绍了在 Next 主题的基础上进行美化的方案，主要包括:
 
 + Font：字体、动态背景
@@ -23,7 +22,8 @@ date: 2019-05-17 10:07:53
 
   <!--more-->
 
-### Font
+## Font
+
 前端的美化，可以做的比较多，比如修改字体、修改背景等等。
 首先修改主题配置文件 _config.yml里的配置`font`：
 
@@ -33,7 +33,7 @@ font:
 + enable: true	# 开启前端设置
 ```
 
-#### 修改字体
+### 修改字体
 
 默认的字体是微软雅黑，有点审美疲劳了 (lll￢ω￢)，在浏览其他人网站的时候看到了一种很有科技感的字体 『**Monda**』，感觉还是不错的。如何应用到自己的博客呢？
 首先，可以从 [frontyukle](https://www.fontyukle.net/cn/1,MONDA) 下载字体文件，在服务器上安装。
@@ -45,7 +45,7 @@ global:
 + family: Monda	# 设置Monda字体
 ```
 
-#### 设置三角丝带背景
+### 设置三角丝带背景
 
 该功能由 Vue 作者 [尤雨溪](http://evanyou.me/) 首创。注意：添加动态背景会极大增加页面内存占用及 CPU 消耗。
 
@@ -67,21 +67,23 @@ canvas_ribbon:
 
 ---
 
-### Top
+## Top
 
-#### 加载进度条
+### 加载进度条
 
 当网络不好的时候会出现白屏等待，此时如果能有加载进度提示将会提高用户操作体验。
 首先，在根目录下执行以下命令安装相关依赖：
+
 ``` bash
 $ git clone https://github.com/theme-next/theme-next-pace themes/next/source/lib/pace
 ```
 
 然后，修改主题配置文件 _config.yml 里的配置`pace` 改为 `true`，并从上面提供的样式中选择一种填入`pace_theme`中就可以了。
 
-####  fork github 标识
+### fork github 标识
 
 修改主题配置文件 _config.yml 里的配置`github_banner`：
+
 ``` diff themes/next/_config.yml
 github_banner:
 -  enable: false
@@ -89,13 +91,15 @@ github_banner:
 +  permalink: https://github.com/yourname
 ```
 
-#### 菜单显示
+### 菜单显示
 
 在 Muse主题方案中 Header 和 Footer 是没有背景色的，的颜色与内容一致不易区分，而且网站标题的字体不够明显，我做了几个修改
+
 + 头部和底部颜色修改
 + 网站标题加粗和颜色修改
 
 在主题自定义样式文件中添加以下样式：
+
 ``` css themes/next/sources/_custom/custom.styl
 //窗口效果相关样式
 .sidebar {
@@ -150,32 +154,33 @@ if hexo-config('scheme') == "Muse" {
 如果 custom.swig 文件不存在，需要手动新建并在布局页面中 body 末尾引入：
 
 ``` diff themes/next/layout/_layout.swig
-      ...
-  	{% include '_third-party/copy-code.swig' %}
-  	{% include '_third-party/chatra.swig' %}
-  	{% include '_third-party/tidio.swig' %}
+    ...
+  {% include '_third-party/copy-code.swig' %}
+  {% include '_third-party/chatra.swig' %}
+  {% include '_third-party/tidio.swig' %}
 
-+     {% include '_custom/custom.swig' %}
-    </body>
++  {% include '_custom/custom.swig' %}
+</body>
 ```
 
 调节移动端显示的高度
+
 ``` diff themes/next/source/css/_schemes/Muse/_menu.styl
 mobile() {
-	position: absolute;
+  position: absolute;
   left: 0;
 -  top: 52px;
 +  top: 95px;
   margin: 0;
-	...
+  ...
 }
 ```
 
 ---
 
-### Footer
+## Footer
 
-#### ICP备案和公安备案
+### ICP备案和公安备案
 
 我们的网站已经有备案号了，但是应该如何添加备案号到博客最下面呢？
 首先，在主题配置文件 _config.yml 里的配置添加备案配置：
@@ -194,14 +199,15 @@ mobile() {
 ```
 
 然后，修改原有的布局文件中备案样式的代码：
+
 ``` diff  themes/next/layout/_partials/footer.swig
-	#}{% set current = date(Date.now(), "YYYY") %}{#
--	#}{% if theme.footer.beian.enable %}{#
--	#}  {{ next_url('http://www.beian.miit.gov.cn', theme.footer.beian.icp + ' ') }}{#
--	#}{% endif %}{#
-	#}&copy; {% if theme.footer.since and theme.footer.since != current %}{{ theme.footer.since }} – {% endif %}{#
-		...
-	  <span class="author" itemprop="copyrightHolder">{{ theme.footer.copyright || author }}</span>
+  #}{% set current = date(Date.now(), "YYYY") %}{#
+- #}{% if theme.footer.beian.enable %}{#
+- #}  {{ next_url('http://www.beian.miit.gov.cn', theme.footer.beian.icp + ' ') }}{#
+- #}{% endif %}{#
+  #}&copy; {% if theme.footer.since and theme.footer.since != current %}{{ theme.footer.since }} – {% endif %}{#
+  ...
+  <span class="author" itemprop="copyrightHolder">{{ theme.footer.copyright || author }}</span>
 
 +  <span class="post-meta-divider footer-ages-icon"> | </span>
 
@@ -211,10 +217,9 @@ mobile() {
 最后，在主题布局文件中添加我们的备案样式：
 
 ``` diff  themes/next/layout/_layout.swig
-       <div class="footer-inner">
-        {{ partial('_partials/footer.swig', {}, {cache: theme.cache.enable}) }}
-        {% include '_third-party/analytics/analytics-with-widget.swig' %}
-        
+  <div class="footer-inner">
+    {{ partial('_partials/footer.swig', {}, {cache: theme.cache.enable}) }}
+    {% include '_third-party/analytics/analytics-with-widget.swig' %}
 +        <div class="footer-custom">
 +            {% if theme.footer.beian.enable %}{#
 +          #}{{ next_url('http://www.beian.miit.gov.cn', theme.footer.beian.icp + ' ') }}{#
@@ -227,32 +232,34 @@ mobile() {
 +          {{ next_url('http://www.beian.gov.cn/portal/registerSystemInfo?recordcode='+theme.footer.gongan.num, theme.footer.gongan.local+'公网安备'+theme.footer.gongan.num+'号' ) }}</span>{#
 +          #}{% endif %}
 +        </div>
-        {% block footer %}{% endblock %}
-      </div>
+    {% block footer %}{% endblock %}
+  </div>
 ```
 
-#### 显示网站的建站运行时间
+### 显示网站的建站运行时间
 
 首先，先给网站添加建站时间。修改主题配置文件 _config.yml 里的配置`since` ：
+
 ``` diff themes/next/_config.yml
 footer:
   # Specify the date when the site was setup. If not defined, current year will be used.
 -  #since: 2015
-+  since: 2018	# 修改建站时间
++  since: 2018  # 修改建站时间
 
   # Icon between year and copyright info.
   icon:
     # `heart` is recommended with animation in red (#ff0000).
 -    name: user
-+    name: heart	# 改成心型图标
++    name: heart  # 改成心型图标
     # Change the color of icon, using Hex Code.
 -    color: "#808080"
-+    color: "#ff0000"		# 改成红色图标
++    color: "#ff0000" # 改成红色图标
 
 ```
 
 此时，建站时间的 @since 就修改好了，接下来我们显示网站的运行时间（在这里我做了一些个性化文字显示，可供大家参考）。
 在主题配置文件 _config.yml 里的添加 `ages`配置：
+
 ``` diff themes/next/_config.yml
 +  ages: # site running time
 +    enable: true
@@ -261,12 +268,14 @@ footer:
 ```
 
 在语言配置文件里，添加表述文案`age`：
+
 ``` diff themes/next/languages/zh-CN.yml
 footer:
-+		age: 我已在此等候你
++   age: 我已在此等候你
 ```
 
 在主题自定义布局文件中添加以下代码：
+
 ``` html themes/next/layout/_custom/custom.swig
 {# 页脚站点运行时间统计 #}
   {% if theme.footer.ages.enable %}
@@ -292,7 +301,7 @@ footer:
       document.querySelector(".copyright").insertBefore(span, agesicon.nextSibling);
       timer();
     </script>
-  {% endif %} 
+  {% endif %}
 ```
 
 #### 添加访客统计
@@ -317,13 +326,13 @@ busuanzi_count:
 
 ``` diff themes/next/languages/zh-CN.yml
 footer:
--		total_views: 总访问量
-- 	total_visitors: 总访客量
-+ 	total_views: "历经 %s 次回眸才与你相遇"
-+ 	total_visitors: "我的第 %s 位朋友，"
+- total_views: 总访问量
+- total_visitors: 总访客量
++ total_views: "历经 %s 次回眸才与你相遇"
++ total_visitors: "我的第 %s 位朋友，"
 ```
 
-最后，修改不算子模板文件：
+最后，修改不蒜子模板文件：
 
 ``` diff themes/next/layout/_third-party/analytics/busuanzi-counter.swig
 <div class="busuanzi-count">
@@ -332,52 +341,52 @@ footer:
 +  {% if theme.busuanzi_count.enable %}
 +  <script async src="https://busuanzi.ibruce.info/busuanzi/2.3/busuanzi.pure.mini.js"></script>
 +
-  	{% if theme.busuanzi_count.total_visitors %}
--    	<span class="post-meta-item-icon">
--      	<i class="fa fa-{{ theme.busuanzi_count.total_visitors_icon }}"></i>
--    	</span>
--    	<span class="site-uv" title="{{ __('footer.total_visitors') }}">
--      	<span class="busuanzi-value" id="busuanzi_value_site_uv"></span>
-+    		<span class="site-uv">
-+      	{{ __('footer.total_visitors', '<span class="busuanzi-value" id="busuanzi_value_site_uv"></span>') }}
-    	</span>
-  	{% endif %}
+    {% if theme.busuanzi_count.total_visitors %}
+-    <span class="post-meta-item-icon">
+-      <i class="fa fa-{{ theme.busuanzi_count.total_visitors_icon }}"></i>
+-    </span>
+-    <span class="site-uv" title="{{ __('footer.total_visitors') }}">
+-      <span class="busuanzi-value" id="busuanzi_value_site_uv"></span>
++       <span class="site-uv">
++       {{ __('footer.total_visitors', '<span class="busuanzi-value" id="busuanzi_value_site_uv"></span>') }}
+    </span>
+    {% endif %}
 
--  	{% if theme.busuanzi_count.total_visitors and theme.busuanzi_count.total_views %}
--    	<span class="post-meta-divider">|</span>
--  	{% endif %}
+-   {% if theme.busuanzi_count.total_visitors and theme.busuanzi_count.total_views %}
+-     <span class="post-meta-divider">|</span>
+-   {% endif %}
 -
-  	{% if theme.busuanzi_count.total_views %}
--    	<span class="post-meta-item-icon">
--      	<i class="fa fa-{{ theme.busuanzi_count.total_views_icon }}"></i>
--    	</span>
--    	<span class="site-pv" title="{{ __('footer.total_views') }}">
--      	<span class="busuanzi-value" id="busuanzi_value_site_pv"></span>
-+    	<span class="site-pv">
-+      	{{ __('footer.total_views', '<span class="busuanzi-value" id="busuanzi_value_site_pv"></span>') }}
-    	</span>
-  	{% endif %}
-+	{% endif %}
+    {% if theme.busuanzi_count.total_views %}
+-     <span class="post-meta-item-icon">
+-       <i class="fa fa-{{ theme.busuanzi_count.total_views_icon }}"></i>
+-     </span>
+-     <span class="site-pv" title="{{ __('footer.total_views') }}">
+-       <span class="busuanzi-value" id="busuanzi_value_site_pv"></span>
++     <span class="site-pv">
++       {{ __('footer.total_views', '<span class="busuanzi-value" id="busuanzi_value_site_pv"></span>') }}
+      </span>
+    {% endif %}
++ {% endif %}
 </div>
 ```
 
 ---
 
-### Sidebar
+## Sidebar
 
-#### 显示当前浏览进度
+### 显示当前浏览进度
 
 在主题配置文件中修改`back2top`的`scrollpercent`：
 
 ``` diff themes\next\_config.yml
 back2top:
-  	enable: true
-  	sidebar: false
--  	scrollpercent: false
-+  	scrollpercent: true  #  浏览页面的时候显示当前浏览进度  
+  enable: true
+  sidebar: false
+-  scrollpercent: false
++  scrollpercent: true  #  浏览页面的时候显示当前浏览进度  
 ```
 
-#### 侧边栏移到左边显示
+### 侧边栏移到左边显示
 
 我们习惯了导航菜单在左边的格式，因此萌发了把主题侧边栏放在左侧的想法。
 Next 主题中 Pisces 和 Gemini 支持通过主题配置文件来将侧边栏置于左侧或右侧。
@@ -386,7 +395,7 @@ Next 主题中 Pisces 和 Gemini 支持通过主题配置文件来将侧边栏�
 ``` diff  themes/next/_config.yml
 sidebar:
 # Sidebar Position, available values: left | right (only for Pisces | Gemini).
-+  position: left		# 调整侧边栏显示位置，仅支持 Pisces 和 Gemini 主题
++  position: left   # 调整侧边栏显示位置，仅支持 Pisces 和 Gemini 主题
 -  #position: right
 ```
 
@@ -443,4 +452,3 @@ body {
   +desktop-large() { font-size: $font-size-large; }
 }
 ```
-

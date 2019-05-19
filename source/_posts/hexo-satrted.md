@@ -21,69 +21,84 @@ tags: Hexo
 
 闲话不多说了，我们开始吧！
 
-### 安装node.js
+## 安装node.js
+
 在 [官方下载网站](https://nodejs.org/en/download/) 下载源代码，选择最后一项 `Source Code`
 解压到某一目录, 然后进入此目录,依次执行以下 3 条命令
+
 ``` bash
 $ ./configure
 $ make
 $ sudo make install
 ```
+
 安装完后查看`node.js`版本，检验是否安装成功
+
 ``` bash
-$ node -v  	
+$ node -v
 ```
 
-### 安装hexo
+## 安装hexo
+
 在命令行中通过 **npm** 来安装 hexo：
+
 ``` bash
-$ npm install -g hexo-cli  	
+$ npm install -g hexo-cli
 ```
 
-#### 本地启动hexo
+### 本地启动hexo
+
 创建一个博客目录（例如 `/my-blog`），cd 到该目录下，执行初始化命令
+
 ``` bash
 $ cd my-blog
 $ hexo init
 ```
+
 执行完毕后，将会生成以下文件结构：
+
 ``` tree
 .
 |-- node_modules       //依赖安装目录
 |-- scaffolds          //模板文件夹，新建的文章将会从此目录下的文件中继承格式
 |-- source             //资源文件夹，用于放置图片、数据、文章等资源
-|   |-- _posts				 //文章目录
+|   |-- _posts          //文章目录
 |-- themes             //主题文件夹
 |   |-- landscape      //默认主题
 |-- .gitignore         //指定不纳入git版本控制的文件
 |-- _config.yml        //站点配置文件
-|-- db.json            
+|-- db.json
 |-- package.json
 `-- package-lock.json
 ```
+
 在根目录下执行如下命令启动**hexo**内置的web容器
 
 ``` bash
-$ hexo generate 	# 生成静态文件
-$ hexo server 		# 在本地服务器运行
-
+$ hexo generate     # 生成静态文件
+$ hexo server       # 在本地服务器运行
 ```
-在浏览器输入IP地址 http://localhost:4000/  就可以看到我们熟悉的** Hello Word **了。
 
-#### 常用命令简化和组合
+在浏览器输入IP地址 http://localhost:4000  就可以看到我们熟悉的** Hello Word **了。
+
+### 常用命令简化和组合
+
 ``` bash
-$ hexo g 	# 等同于hexo generate
-$ hexo s 	# 等同于hexo server
-$ hexo p 	# 等同于hexo port 
-$ hexo d 	# 等同于hexo deploy 
+$ hexo g    # 等同于hexo generate
+$ hexo s    # 等同于hexo server
+$ hexo p    # 等同于hexo port 
+$ hexo d    # 等同于hexo deploy 
 ```
+
 当本地不想使用默认的4000端口时（比如在服务器上，默认使用80端口），可以使用 port 命令更改启动端口
 另外，**hexo**支持命令合并，比方说 生成静态文件 → 本地启动80端口，我们可以执行
 
 ``` bash
 $ hexo s -g -p 80
 ```
-### 安装next主题
+
+## 安装next主题
+
 hexo 安装主题的方式非常简单, 只需要将主题文件拷贝至站点目录的 `themes` 目录下, 然后修改站点配置文件`_config.yml`中的 `theme`字段为 `next`即可
 
 cd 到博客的根目录下执行以下命令下载主题文件：
@@ -97,8 +112,10 @@ theme: next
 ```
 
 清除 `hexo 缓存`，重启服务
+
 ``` bash
 $ hexo clean
 $ hexo s -g
 ```
+
 大部分的设定都能在 [NexT官方文档](http://theme-next.iissnan.com/getting-started.html) 里找到, 如主题设定、侧栏、头像、友情链接、打赏等等，在此就不多讲了，照着文档走就行了。
