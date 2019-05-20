@@ -1,5 +1,3 @@
-<script src="https://unpkg.com/sweetalert/dist/sweetalert.min.js"></script>
-
 {# 页面加载时header高度收缩动效 #}
 <script>
   $(document).ready(function () {

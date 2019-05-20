@@ -138,7 +138,6 @@ if hexo-config('scheme') == "Muse" {
 在主题自定义布局文件中添加以下代码：
 
 ``` html themes/next/layout/_custom/custom.swig
-<script src="https://unpkg.com/sweetalert/dist/sweetalert.min.js"></script>
 
 {# 页面加载时header高度收缩动效 #}
 <script>

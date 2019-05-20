@@ -455,7 +455,7 @@ font:
   enable: true # 开启前端设置
 
   # Uri of fonts host, e.g. //fonts.googleapis.com (Default).
-  host:
+  host: fonts.cat.net
 
   # Font options:
   # `external: true` will load this font family from `host` above.
@@ -1083,8 +1083,8 @@ vendors:
   # velocity: //cdnjs.cloudflare.com/ajax/libs/velocity/1.2.1/velocity.min.js
   # velocity_ui: //cdn.jsdelivr.net/npm/velocity-animate@1/velocity.ui.min.js
   # velocity_ui: //cdnjs.cloudflare.com/ajax/libs/velocity/1.2.1/velocity.ui.min.js
-  velocity:
-  velocity_ui:
+  velocity: //cdn.jsdelivr.net/npm/velocity-animate@1/velocity.min.js
+  velocity_ui: //cdn.jsdelivr.net/npm/velocity-animate@1/velocity.ui.min.js
 
   # Internal version: 4.6.2
   # See: https://fontawesome.com
