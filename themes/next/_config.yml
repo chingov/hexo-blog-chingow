@@ -455,7 +455,7 @@ font:
   enable: true # 开启前端设置
 
   # Uri of fonts host, e.g. //fonts.googleapis.com (Default).
-  host: fonts.cat.net
+  host: 
 
   # Font options:
   # `external: true` will load this font family from `host` above.
