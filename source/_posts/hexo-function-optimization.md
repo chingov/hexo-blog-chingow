@@ -1,5 +1,5 @@
 ---
-title: Hexo 搭建个人博客：功能优化
+title: Hexo 搭建个人博客：功能强化
 copyright: true
 related_posts: true
 tags:
