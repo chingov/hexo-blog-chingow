@@ -69,8 +69,9 @@
             <span class="post-meta-divider">|</span>
           {% endif %}
           {% if theme.footer.gongan.enable %}{#
-          #} <span style="padding-left:25px;background:url(/images/beian.png) no-repeat left center" rel="nofollow">
-          {{ next_url('http://www.beian.gov.cn/portal/registerSystemInfo?recordcode='+theme.footer.gongan.num, theme.footer.gongan.local+'公网安备'+theme.footer.gongan.num+'号' ) }}</span>{#
+          #} <span style="padding-left:25px;background:url(/images/beian.png) no-repeat left center" rel="nofollow">{#
+          #} {{ theme.footer.gongan.local}}{{__('footer.beian.gongan', next_url('http://www.beian.gov.cn/portal/registerSystemInfo?recordcode='+theme.footer.gongan.num, theme.footer.gongan.num )) }}{#
+          #}</span>{#
           #}{% endif %}
         </div>
         {% block footer %}{% endblock %}

@@ -194,7 +194,15 @@ mobile() {
 +    num: 42011102003178
 ```
 
-然后，修改原有的布局文件中备案样式的代码：
+然后，在语言配置文件里，添加表述文案`beian`：
+
+``` diff themes/next/languages/zh-CN.yml
+footer:
++   beian: 
++    gongan: 公网安备%s号
+```
+
+接下来，修改原有的布局文件中备案样式的代码：
 
 ``` diff  themes/next/layout/_partials/footer.swig
   #}{% set current = date(Date.now(), "YYYY") %}{#
@@ -224,8 +232,8 @@ mobile() {
 +            <span class="post-meta-divider">|</span>
 +          {% endif %}
 +          {% if theme.footer.gongan.enable %}{#
-+          #} <span style="padding-left:25px;background:url(/images/beian.png) no-repeat left center" rel="nofollow">
-+          {{ next_url('http://www.beian.gov.cn/portal/registerSystemInfo?recordcode='+theme.footer.gongan.num, theme.footer.gongan.local+'公网安备'+theme.footer.gongan.num+'号' ) }}</span>{#
++          #} <span style="padding-left:25px;background:url(/images/beian.png) no-repeat left center" rel="nofollow">{#
++          #} {{ theme.footer.gongan.local}}{{__('footer.beian.gongan', next_url('http://www.beian.gov.cn/portal/registerSystemInfo?recordcode='+theme.footer.gongan.num, theme.footer.gongan.num )) }}{#
 +          #}{% endif %}
 +        </div>
     {% block footer %}{% endblock %}
