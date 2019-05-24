@@ -80,7 +80,7 @@ footer:
   # http://www.beian.miit.gov.cn
   beian:
     enable: true
-    icp: 鄂ICP证18014719号
+    icp: 鄂ICP备18014719号
 
   # 这里是新加的内容，填写公安备案信息
   gongan:
