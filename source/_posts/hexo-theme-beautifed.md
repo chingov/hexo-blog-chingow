@@ -17,7 +17,7 @@ abbrlink: c7372a12
 + Font：字体、动态背景
 + Top：进度条、fork-github、菜单高度收缩
 + Footer：备案显示、运行时间、访客统计
-+ Sidebar：浏览进度、左边显示
++ Sidebar：浏览进度、左边显示、目录展开
 
 大家可以选择自己喜欢的方案美化自己的博客。
 
@@ -400,11 +400,10 @@ back2top:
 Next 主题中 Pisces 和 Gemini 支持通过主题配置文件来将侧边栏置于左侧或右侧。
 修改主题配置文件 _config.yml 里的配置`sidebar` ：
 
-``` diff  themes/next/_config.yml
+``` yaml  themes/next/_config.yml
 sidebar:
 # Sidebar Position, available values: left | right (only for Pisces | Gemini).
-+  position: left   # 调整侧边栏显示位置，仅支持 Pisces 和 Gemini 主题
--  #position: right
+  position: left   # 调整侧边栏显示位置，仅支持 Pisces 和 Gemini 主题
 ```
 
 而 Muse 和 Mist 则需要深度修改源码才能实现改变侧边栏位置：
@@ -459,4 +458,15 @@ body {
 + +tablet() { padding-right: 0 !important; }
   +desktop-large() { font-size: $font-size-large; }
 }
+```
+
+### 侧边栏目录展开
+
+侧边栏的TOC目录每次滑到哪儿，目录展开到哪。这样查看文章结构就很不方便，如何设置才能让文章目录默认全部都展开？
+修改主题配置文件 _config.yml 里的配置`toc` ：
+
+``` yaml  themes/next/_config.yml
+toc:
+  wrap: false  ## 如果标题超长，是否换行
+  expand_all: true  ## 侧边栏是否完全展开
 ```
