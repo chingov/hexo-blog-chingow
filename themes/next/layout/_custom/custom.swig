@@ -17,7 +17,7 @@
         ages = ages.replace(/\s?\d{0,2}\s+seconds?/, "");
         ages = ages.replace(/years?/, "年");
         ages = ages.replace(/months?/, "月");
-        ages = ages.replace(/days(.+)/, "天");
+        ages = ages.replace(/days?/, "天");
         ages = ages.replace(/\d+/g, '<span style="color:{{ theme.footer.ages.color }}">$&</span>');
         span.innerHTML = `{{ __('footer.age')}} ${ages}`;
       }

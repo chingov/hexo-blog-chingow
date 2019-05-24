@@ -284,7 +284,7 @@ footer:
         //将年月日转换为中文
         ages = ages.replace(/years?/, "年");
         ages = ages.replace(/months?/, "月");
-        ages = ages.replace(/days(.+)/, "天");
+        ages = ages.replace(/days?/, "天");
         ages = ages.replace(/\d+/g, '<span style="color:{{ theme.footer.ages.color }}">$&</span>');
         span.innerHTML = `{{ __('footer.age')}} ${ages}`;
       }
