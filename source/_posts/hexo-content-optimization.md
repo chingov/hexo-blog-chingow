@@ -4,7 +4,7 @@ copyright: true
 related_posts: true
 tags:
   - Hexo
-  - 统计
+  - 不蒜子
   - 版权
   - 推荐
 categories: 博客
