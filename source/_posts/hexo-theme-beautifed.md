@@ -2,8 +2,7 @@
 title: Hexo 搭建个人博客：主题美化
 tags:
   - Hexo
-  - Monda
-  - 备案
+  - Next
 categories: 博客
 date: 2019-05-17 10:07:53
 copyright: true
@@ -13,7 +12,7 @@ abbrlink: c7372a12
 
 本文介绍了在 Next 主题的基础上整体布局美化的方案，主要包括:
 
-+ Font：字体、动态背景
++ Font：字体、动态背景canvas_ribbon
 + Top：进度条、fork-github、菜单高度收缩
 + Footer：备案显示、运行时间、访客统计
 + Sidebar：浏览进度、左边显示、目录展开
@@ -304,7 +303,7 @@ footer:
   {% endif %}
 ```
 
-#### 添加访客统计
+### 添加访客统计
 
 该功能由 [不蒜子](http://ibruce.info/2015/04/04/busuanzi/) 提供。UV：独立访客数，PV：网站浏览量，访客数和浏览量的区别在于一个用户连续点击n篇文章，会记录n次浏览量，但只记录一次访客数。
 {% note %}

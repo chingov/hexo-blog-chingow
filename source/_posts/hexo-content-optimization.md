@@ -4,9 +4,7 @@ copyright: true
 related_posts: true
 tags:
   - Hexo
-  - 不蒜子
-  - 版权
-  - 推荐
+  - Next
 categories: 博客
 abbrlink: bd723aed
 date: 2019-05-18 16:08:13
@@ -15,8 +13,8 @@ date: 2019-05-18 16:08:13
 Next主题内提供了很多功能来让内容更加丰富，本文介绍了如何开启和定制这些功能，主要包括:
 
 + 模板设置
-+ 文章发布修改时间、字数统计
-+ 文章版权声明、推荐、分享
++ 文章发布修改时间、字数统计、阅读统计
++ 文章版权声明
 + 文章内链接、底部标签图标
 + 代码块复制、显示和隐藏
 + 草稿和发布
@@ -168,52 +166,6 @@ copyright:
 + copyright: true
 ```
 
-## 相关文章推荐
-
-该功能由 [hexo-related-popular-posts](https://github.com/tea3/hexo-related-popular-posts) 插件提供
-
-在站点根目录中执行以下命令安装依赖：
-
-``` bash
-$ npm install hexo-related-popular-posts --save
-```
-
-在主题配置文件中开启相关文章推荐功能：
-
-``` yaml themes/next/_config.yml
-related_posts:
-  enable: true
-  title:  # custom header, leave empty to use the default one
-  display_in_home: false
-  params:
-    maxCount: 3
-```
-
-此时会在每篇文章结尾根据标签相关性和内容相关性来推荐相关文章。
-
-事实上并非每篇文章都需要开启该功能，可在文章 Front-Matter 中设置 `related_posts` 字段来控制是否在文末显示相关文章，然后修改文章布局模板中相关的判定条件：
-
-``` diff themes/next/layout/_macro/post.swig
-- {% if theme.related_posts.enable and (theme.related_posts.display_in_home or not is_index) %}
-+ {% if theme.related_posts.enable and (theme.related_posts.display_in_home or not is_index) and post.related_posts %}
-    {% include 'post-related.swig' with { post: post } %}
-  {% endif %}
-```
-
-为了方便可在草稿模板 scaffolds\draft.md 中统一添加 `related_posts` 字段默认值：
-
-``` diff scaffolds/draft.md
-  title: {{ title }}
-  tags:
-  categories:
-+ related_posts: true
-```
-
-## 文章分享
-
---- 待完成 ---
-
-
 ## 链接样式
 
 主题自带的样式在hover时是灰色的，颜色不明显。修改全局的基本变量：
@@ -272,6 +224,8 @@ copy_button:
 ```
 
 ## 代码块显示和隐藏
+
+--- 待完成 ---
 
 ---
 

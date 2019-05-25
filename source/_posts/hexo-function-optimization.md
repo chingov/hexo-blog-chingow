@@ -4,8 +4,7 @@ copyright: true
 related_posts: true
 tags:
   - Hexo
-  - 搜索
-  - DaoVoice
+  - Next
 categories: 博客
 abbrlink: e0970dc8
 date: 2019-05-19 22:08:03
@@ -16,6 +15,8 @@ date: 2019-05-19 22:08:03
 + 分类时间线
 + DaoVoice
 + 站内搜索
++ 文章推荐、分享
++ Valine评论
 + 图片灯箱
 <!--more-->
 
@@ -87,7 +88,7 @@ daovoice_app_id: {your app_id}
 具体样式设计可以在 应用设置-->聊天设置 后边改。
 
 
-## 站内搜索功能
+## 站内搜索
 
 该功能由 [hexo-generator-searchdb](https://github.com/theme-next/hexo-generator-searchdb) 提供。
 
@@ -116,6 +117,55 @@ local_search:
   height: calc(100% - 95px)
 }
 ```
+
+## 相关文章推荐
+
+该功能由 [hexo-related-popular-posts](https://github.com/tea3/hexo-related-popular-posts) 插件提供
+
+在站点根目录中执行以下命令安装依赖：
+
+``` bash
+$ npm install hexo-related-popular-posts --save
+```
+
+在主题配置文件中开启相关文章推荐功能：
+
+``` yaml themes/next/_config.yml
+related_posts:
+  enable: true
+  title:  # custom header, leave empty to use the default one
+  display_in_home: false
+  params:
+    maxCount: 3
+```
+
+此时会在每篇文章结尾根据标签相关性和内容相关性来推荐相关文章。
+
+事实上并非每篇文章都需要开启该功能，可在文章 Front-Matter 中设置 `related_posts` 字段来控制是否在文末显示相关文章，然后修改文章布局模板中相关的判定条件：
+
+``` diff themes/next/layout/_macro/post.swig
+- {% if theme.related_posts.enable and (theme.related_posts.display_in_home or not is_index) %}
++ {% if theme.related_posts.enable and (theme.related_posts.display_in_home or not is_index) and post.related_posts %}
+    {% include 'post-related.swig' with { post: post } %}
+  {% endif %}
+```
+
+为了方便可在草稿模板 scaffolds\draft.md 中统一添加 `related_posts` 字段默认值：
+
+``` diff scaffolds/draft.md
+  title: {{ title }}
+  tags:
+  categories:
++ related_posts: true
+```
+
+## 文章分享
+
+--- 待完成 ---
+
+## Valine评论
+
+--- 待完成 ---
 
 ## 添加图片灯箱
 
