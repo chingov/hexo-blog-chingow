@@ -20,18 +20,16 @@ date: 2019-05-20 17:15:23
 
 <!--more-->
 
-首先，可利用 [Google PageSpeed Insights](https://developers.google.com/speed/pagespeed/insights/) 帮助分析网页加载速度，根据报告的结果和优化建议进行针对性的优化。
+首先，可利用 [Google PageSpeed Insights](https://developers.google.com/speed/pagespeed/insights/) 帮助分析网页加载速度，根据报告结果和优化建议进行针对性的优化。
 常见的网站提速方案有：cdn加速，压缩源文件，nginx gzip压缩，减少网站一些不必要的引入，图片大小等。
 
 ### CDN加速
 
-在阅读下文之前，如果你还不知道 CDN 是个什么，请先移步[百度百科：CDN词条](https://baike.baidu.com/item/CDN)进行一些了解。
+在阅读下文之前，如果你还不知道 CDN 是什么，请先移步[百度百科：CDN词条](https://baike.baidu.com/item/CDN)进行一些了解。
 在所有静态资源中，对加载速度影响较大且存在大幅优化空间的主要还是「JavaScript 第三方库」脚本，因此将其改为从开源公共 CDN 加载。
-对于我们的 Hexo 博客来说，Next 主题已经很好为我们做好了配置，方便使用公共静态库。
-在主题配置文件中修改`vendors`，为其添加 CDN 加载源：
+对于我们的 Hexo 博客来说，Next 主题已经做好了配置，只需添加 CDN 加载源即可，在主题配置文件中修改`vendors`：
 
 ``` yaml themes/next/_config.yml
-
   # Example:
   # jquery: //cdn.jsdelivr.net/npm/jquery@2/dist/jquery.min.js
   # jquery: //cdnjs.cloudflare.com/ajax/libs/jquery/2.1.3/jquery.min.js
@@ -45,10 +43,10 @@ date: 2019-05-20 17:15:23
 ### Nginx压缩、缓存
 
 Nginx 是一个高性能的 Web 服务器，合理配置可以有效提高网站的响应速度。
-gzip的压缩页面需要浏览器和服务器双方都支持，实际上就是服务器端压缩，传到浏览器后浏览器解压并解析。
 
 #### 开启gzip
 
+gzip压缩页面需要浏览器和服务器双方都支持，实际上就是服务器端压缩，传到浏览器后浏览器解压并解析。
 修改nginx.conf，在http模块中增加gzip配置：
 
 ``` html
