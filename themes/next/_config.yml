@@ -138,7 +138,7 @@ index_with_subtitle: false
 exturl: false
 
 # Google Webmaster tools verification.
-# See: https://www.google.com/webmasters
+# See: https://www.google.com/webmasters  谷歌网站验证码
 google_site_verification: HCj467TtuvFkAzzdCvYvbniAeNiUy7TUwp2hG1qGWQE
 
 # Bing Webmaster tools verification.
@@ -150,8 +150,8 @@ google_site_verification: HCj467TtuvFkAzzdCvYvbniAeNiUy7TUwp2hG1qGWQE
 #yandex_site_verification:
 
 # Baidu Webmaster tools verification.
-# See: https://ziyuan.baidu.com/site
-#baidu_site_verification:
+# See: https://ziyuan.baidu.com/site  百度网站验证码
+baidu_site_verification: LppFIbSdZO
 
 # Enable baidu push so that the blog will push the url to baidu automatically which is very helpful for SEO.
 baidu_push: false
