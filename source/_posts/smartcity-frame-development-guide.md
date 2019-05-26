@@ -1,5 +1,5 @@
 ---
-title: smartSpring框架 -- 02.开发指南
+title: SmartSpring框架 -- 02.开发指南
 copyright: true
 related_posts: true
 categories: 框架

@@ -1,5 +1,5 @@
 ---
-title: smartSpring框架 -- 05.常见问题
+title: SmartSpring框架 -- 05.常见问题
 copyright: true
 related_posts: true
 categories: 框架

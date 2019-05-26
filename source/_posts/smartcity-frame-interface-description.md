@@ -1,5 +1,5 @@
 ---
-title: smartSpringy框架 -- 04.接口说明
+title: SmartSpring框架 -- 04.接口说明
 copyright: true
 related_posts: true
 categories: 框架
