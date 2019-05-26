@@ -87,7 +87,6 @@ daovoice_app_id: {your app_id}
 
 具体样式设计可以在 应用设置-->聊天设置 后边改。
 
-
 ## 站内搜索
 
 该功能由 [hexo-generator-searchdb](https://github.com/theme-next/hexo-generator-searchdb) 提供。
@@ -165,7 +164,64 @@ related_posts:
 
 ## Valine评论
 
---- 待完成 ---
+> Valine 诞生于 2017 年 8 月 7 日，是一款基于 [LeanCloud](https://leancloud.cn) 提供后端数据服务的快速、简洁且高效的无后端评论系统，支持匿名评论、持Markdown、Emoji等都是它的绝对优势，而且 Next 主题也已经内置了 Valine 组件，使用起来非常方便。
+
+首先，在LeanCloud上注册账号并创建应用，设置LeanCloud的信息。
+
+在 **存储** -> **数据** 中 新建一个名为 Counter 的Class，ACL权限设置为 **无限制**：
+在 **设置** -> **安全中心** 中添加博客域名到 Web 安全域名中，以保护LeanCloud应用的数据安全。
+
+{% note info %}
+在LeanCloud中的Class可以理解为数据库中的数据表。Counter用于存储记录文章访问量，记录是以url作为唯一依据的，所以根据默认的permalink组成结构，如果你更改了文章的发布日期和标题中的任意一个，都会造成文章阅读数值的清零重计。
+{% endnote %}
+
+然后，在主题配置文件中开启评论功能即可：
+
+``` yaml themes/next/_config.yml
+valine:
+  enable: true    # 开启 Valine 评论
+  # 设置应用 id 和 key
+  appid:  # your leancloud application appid
+  appkey:  # your leancloud application appkey
+  # 关闭提醒与验证
+  notify: false
+  verify: false
+  placeholder:  # 文本框默认文字
+  avatar: mm  # gravatar style
+  guest_info: nick,mail # 需要填写的信息字段
+  pageSize: 10  # 每页评论数
+  language: zh-cn # language, available values: en, zh-cn
+  visitor: true # 开启文章阅读次数统计
+  comment_count: false # 首页是否开启评论数
+```
+
+有时候我们并不想在文章标题下显示评论数量，如要隐藏，可在自定义样式文件中添加如下代码：
+
+``` css themes/next/source/css/_custom/custom.styl
+//屏蔽标题下的评论数量
+.post-comments-count {
+  display: none;
+}
+```
+
+评论区会显示评论人的浏览器和操作系统版本号等信息，如果只想要一个干净的评论界面，而没有多余其他的信息，可在自定义样式文件中添加如下代码：
+
+``` css themes/next/source/css/_custom/custom.styl
+//屏蔽评论组件的多余信息
+#comments .info, #comments .vsys {
+  display: none;
+}
+```
+
+最后，集成评论服务后，所有的页面也会带有评论，包括标签、关于等页面。这里需要在添加字段`comments`并将值设置为 false 即可。
+
+``` html
+---
+title: 标签
+type: "tags"
+comments: false
+---
+```
 
 ## 添加图片灯箱
 
@@ -194,5 +250,3 @@ fancybox: true
 + 尽量在自定义样式文件 custom.styl 和自定义布局文件 custom.swig 中添加代码，而非修改主题源码
 新增文件统一放在 _custom 目录下
 + 所有以上这些原则，尽管实现起来可能更复杂，需要更多的代码，但都是为了让站点更好维护，更灵活方便。
-
-

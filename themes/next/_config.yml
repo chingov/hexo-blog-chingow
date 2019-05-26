@@ -642,18 +642,26 @@ changyan:
 # You can get your appid and appkey from https://leancloud.cn
 # More info available at https://valine.js.org
 valine:
-  enable: false # When enable is set to be true, leancloud_visitors is recommended to be closed for the re-initialization problem within different leancloud adk version.
+  # 开启 Valine 评论 
+  enable: true # When enable is set to be true, leancloud_visitors is recommended to be closed for the re-initialization problem within different leancloud adk version.
+  # 设置应用 id 和 key
   appid:  # your leancloud application appid
   appkey:  # your leancloud application appkey
+  # 关闭提醒与验证 
   notify: false # mail notifier, See: https://github.com/xCss/Valine/wiki
   verify: false # Verification code
-  placeholder: Just go go # comment box placeholder
+  # 文本框默认文字 
+  placeholder:  “”  # comment box placeholder
   avatar: mm # gravatar style
-  guest_info: nick,mail,link # custom comment header
+  # 需要填写的信息字段 
+  guest_info: nick,mail # custom comment header
+  # 每页评论数
   pageSize: 10 # pagination size
-  language: # language, available values: en, zh-cn
-  visitor: false # leancloud-counter-security is not supported for now. When visitor is set to be true, appid and appkey are recommended to be the same as leancloud_visitors' for counter compatibility. Article reading statistic https://valine.js.org/visitor.html
-  comment_count: true # if false, comment count will only be displayed in post page, not in home page
+  language: zh-cn # language, available values: en, zh-cn
+  # 开启文章阅读次数统计
+  visitor: true # leancloud-counter-security is not supported for now. When visitor is set to be true, appid and appkey are recommended to be the same as leancloud_visitors' for counter compatibility. Article reading statistic https://valine.js.org/visitor.html
+  # 首页是否开启评论数
+  comment_count: false # if false, comment count will only be displayed in post page, not in home page
 
 # LiveRe comments system
 # You can get your uid from https://livere.com/insight/myCode (General web site)
@@ -814,12 +822,12 @@ rating:
 # You can visit https://leancloud.cn to get AppID and AppKey.
 leancloud_visitors:
   enable: false
-  app_id: #<app_id>
-  app_key: #<app_key>
+  appid:  # your leancloud application appid
+  appkey:  # your leancloud application appkey
   # Dependencies: https://github.com/theme-next/hexo-leancloud-counter-security
   # If you don't care about security in leancloud counter and just want to use it directly
   # (without hexo-leancloud-counter-security plugin), set `security` to `false`.
-  security: true
+  security: false
   betterPerformance: false
 
 # Another tool to show number of visitors to each article.
@@ -1181,14 +1189,14 @@ vendors:
   # See: https://www.npmjs.com/package/leancloud-storage
   # Example:
   # leancloud: //cdn.jsdelivr.net/npm/leancloud-storage@3/dist/av-min.js
-  leancloud:
+  leancloud: //cdn.jsdelivr.net/npm/leancloud-storage@3/dist/av-min.js
 
   # valine
   # See: https://github.com/xCss/Valine
   # Example:
   # valine: //cdn.jsdelivr.net/npm/valine@1/dist/Valine.min.js
   # valine: //cdnjs.cloudflare.com/ajax/libs/valine/1.3.4/Valine.min.js
-  valine:
+  valine: //cdn.jsdelivr.net/npm/valine@1/dist/Valine.min.js
 
   # gitalk & js-md5
   # See: https://github.com/gitalk/gitalk, https://github.com/emn178/js-md5
@@ -1224,4 +1232,5 @@ images: images
 
 # Online contact 
 daovoice: true
-daovoice_app_id: 3d64b7fd
+daovoice_app_id: # key your voice_app_id
+
