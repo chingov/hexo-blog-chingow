@@ -15,7 +15,7 @@ abbrlink: c7372a12
 + Font：字体、动态背景canvas_ribbon
 + Top：进度条、fork-github、菜单高度收缩
 + Footer：备案显示、运行时间、访客统计
-+ Sidebar：浏览进度、左边显示、目录展开
++ Sidebar：近期文章、浏览进度、左边显示、目录展开
 
 大家可以选择自己喜欢的方案美化自己的博客。
 
@@ -380,6 +380,50 @@ footer:
 ---
 
 ## Sidebar
+
+### 显示近期文章
+
+在主题配置文件中添加近期文章`recent_posts`的配置：
+
+``` yaml  themes/next/_config.yml
+# 近期文章
+recent_posts: true
+recent_posts_layout: block
+```
+
+在语言配置文件里，添加表述文案`recent_posts`：
+
+``` diff themes/next/languages/zh-CN.yml
+sidebar:
++   recent_posts: 近期文章
+```
+
+在侧边栏原有布局文件中的合适位置添加近期文章显示代码：
+
+``` diff themes/next/layout/_macro/sidebar.swig
+  {% if theme.social %}
+  ...
+  {% endif %}
+
++ <!-- 添加近期文章 -->
++ {% if theme.recent_posts %}
++   <div class="links-of-blogroll motion-element {{ "links-of-blogroll-" + theme.recent_posts_layout  }}">
++     <div class="links-of-blogroll-title">
++       <!-- modify icon to fire by szw -->
++       <i class="fa fa-history fa-{{ theme.recent_posts_icon | lower }}" aria-hidden="true"></i>
++       {{ __('sidebar.recent_posts') }}
++     </div>
++     <ul class="links-of-blogroll-list">
++       {% set posts = site.posts.sort('-date') %}
++       {% for post in posts.slice('0', '5') %}
++         <li>
++           <a href="{{ url_for(post.path) }}" title="{{ post.title }}" target="_blank">{{ post.title }}</a>
++         </li>
++       {% endfor %}
++     </ul>
++   </div>
++ {% endif %}
+```
 
 ### 显示当前浏览进度
 
