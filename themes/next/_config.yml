@@ -651,7 +651,7 @@ valine:
   notify: false # mail notifier, See: https://github.com/xCss/Valine/wiki
   verify: false # Verification code
   # 文本框默认文字 
-  placeholder:  “”  # comment box placeholder
+  placeholder: 不想和我聊点什么？  # comment box placeholder
   avatar: mm # gravatar style
   # 需要填写的信息字段 
   guest_info: nick,mail # custom comment header
