@@ -15,7 +15,7 @@ date: 2019-05-19 22:08:03
 + 分类时间线
 + DaoVoice
 + 站内搜索
-+ 文章推荐、分享
++ 文章推荐
 + Valine评论
 + 图片灯箱
 <!--more-->
@@ -157,10 +157,6 @@ related_posts:
   categories:
 + related_posts: true
 ```
-
-## 文章分享
-
---- 待完成 ---
 
 ## Valine评论
 
