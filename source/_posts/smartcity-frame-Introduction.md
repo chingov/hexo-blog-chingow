@@ -1,24 +1,24 @@
 ---
-title: smartcity框架 -- 01.框架介绍
+title: SmartSpring框架 -- 01.框架介绍
 categories: 框架
 tags:
-  - smartcity
+  - smartSpring
   - 框架
   - spring
   - dubbo
 abbrlink: 9cf0a555
 date: 2018-04-18 15:30:02
 ---
-框架的意义在于提高开发效率，统一开发模式，规范编码，减少重复工作，降低出错，提供必要的公共功能，同时需要易于集成、便于维护。
-<!-- more -->
 
-### 背景
+框架的意义在于提高开发效率，统一开发模式，规范编码，减少重复工作，降低出错，提供必要的公共功能，同时需要易于集成、便于维护。
+
 > 在搭建项目之时，需要引入依赖、配置框架，通常一些开源组件和配置不同版本之间会出现冲突问题。<br>前端的模版化引擎会统一渲染接口返回值，这就要求服务端需要对异常信息和响应结果进行统一封装。<br>为了加快项目开发进度还需要封装一些常用的类和工具包，比如 *App Session*管理、接口签名认证、参数验证、常用类型转换等等，有了这些项目才能正常开工。<br>
 > 然而，下次再做类似的项目上述步骤可能还要重来一遍，虽然通常是拿来copy再改改，但是还是比较浪费时间的。<br>所以可以利用面向对象抽象的思想，抽取这类项目的共同之处封装成了种子项目，再开发类似项目时可以直接在此之上迭代，减少无意义的重复工作。
 
+<!-- more -->
 
 ### 功能概览
-![img-w860](/images/smart-spring-概览.jpg)
+![smart-spring-概览](http://ww3.sinaimg.cn/large/006tNc79ly1g3f6i7l6f1j31f40u048g.jpg)
 
 * 预定义常用开源组件依赖版本和插件配置信息，极大的简化了maven 配置
 * 拦截`Response`的返回值，自动封装成 [Result](https://upload-images.jianshu.io/upload_images/1720399-ef517a5be56903e8.png) 类型 
@@ -67,19 +67,19 @@ date: 2018-04-18 15:30:02
 | 富文本 | Ueditor 1.1.1 | 富文本编辑器框架 |
 
 ### 包含模块
-* *smartcity-dependencies*
+* *smart-spring-dependencies*
     > *parent.pom*，统一规划主要依赖开源组件和中间件版本，构建插件的版本和配置信息
     
 * *smart-core*
     > 公共核心的*Core*包，定义公共的返回*Result*、异常、分页等类型以及工具类
     
-* *smartcity-support*
+* *smart-spring-support*
     > 封装常用功能，提供缓存处理、*https*请求、延时消息、定时任务等已成熟的实现方案
     
-* *smartcity-app-core*
+* *smart-spring-app-core*
     > 基于*Jersey*框架封装的*Restful*请求处理框架，实现了*APP Sessio*n管理及接口权限验证
 
-* *smartcity-web-core*
+* *smart-spring-web-core*
     > 基于*SpringMVC*封装的请求处理框架，实现了*Mybatis*分页及自动执行*SQL*初始化脚本
     
 
@@ -91,5 +91,5 @@ date: 2018-04-18 15:30:02
 * 日志自动打印，自动归档
 * 利用注解自动映射字典中文和日期格式
 
-欢迎大家一起来参与完善`smartcity`，期待您宝贵的建议！
+欢迎大家一起来参与完善`smartSpring`，期待您宝贵的建议！
 

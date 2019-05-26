@@ -1,10 +1,10 @@
 ---
-title: smartcity框架 -- 04.接口说明
+title: smartSpringy框架 -- 04.接口说明
 copyright: true
 related_posts: true
 categories: 框架
 tags:
-  - smartcity
+  - smartSpring
   - 框架
 abbrlink: 79afe3c1
 date: 2018-04-18 15:11:31

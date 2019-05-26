@@ -1,10 +1,10 @@
 ---
-title: smartcity框架 -- 05.常见问题
+title: smartSpring框架 -- 05.常见问题
 copyright: true
 related_posts: true
 categories: 框架
 tags:
-  - smartcity
+  - smartSpring
   - 框架
 abbrlink: bdc7564d
 date: 2018-04-18 14:56:15

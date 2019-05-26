@@ -1,18 +1,23 @@
 ---
-title: smartcity框架 -- 03.开发说明
+title: SmartSpring框架 -- 03.开发说明
 copyright: true
 related_posts: true
 categories: 框架
 tags:
-  - smartcity
+  - smartSpring
   - 框架
   - 开发
+  - Dubbo
 abbrlink: 8d7215c3
 date: 2018-04-18 15:16:26
 ---
-### 项目结构
-我们先来看看整个开发项目的代码结构，当我们拿到一个初始化的项目亦或是一个成熟项目，<br> 它大概的结构是这样的：
+
+本篇主要讲解项目的基本结构以及各个主要功能点的开发示例。
+> 由于本项目主要使用阿里的`Dubbo`来做为开发架构，因此也可用于Dubbo开发者学习。
+
 <!-- more -->
+### 项目结构
+当我们使用这套框架搭一个初始化的项目亦或是一个成熟项目之后，它大概的结构是这样的：
 
 ```tree
 .demo-parent 
