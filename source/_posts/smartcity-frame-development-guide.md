@@ -18,7 +18,7 @@ date: 2018-04-18 15:20:27
 * 服务层被共享使用，会带来一些其它的**挑战**，比如业务并发压力等，考虑到性能、伸缩性、可用性和与Spring结合使用的技术成本，我们选择阿里的开源服务框架dubbo来解决这些问题，<br> 由dubbo来提供服务治理功能，dubbo-api 提供接口，dubbo-service 提供业务服务。<br> `ps：对于dubbo框架不了解的同学可以学习 http://dubbo.wangxingrong.com/User+Guide-zh.htm`
 <!-- more -->
 
-![smart-spring-框架分层](http://ww3.sinaimg.cn/large/006tNc79ly1g3f6i62dgaj30yk0u0wps.jpg)
+![smart-spring-框架分层](https://image.chingow.cn/images/smart-spring-%E6%A1%86%E6%9E%B6%E5%88%86%E5%B1%82.jpg)
 
 这个时候有些同学不禁会疑惑，已经有Service业务层处理业务了，我们的biz层又是做什么的呢？<br>
   + 聚合服务；我们有很多分布式服务（`上文提到的评论、支付等`），biz层的一个主要作用是把它们聚合起来，封装成一个与前端适配的接口
@@ -26,7 +26,7 @@ date: 2018-04-18 15:20:27
     
 ### 程序分层
 
-![smart-spring-程序分层](http://ww1.sinaimg.cn/large/006tNc79ly1g3f6ias83bj30u00xzao5.jpg)
+![smart-spring-程序分层](https://image.chingow.cn/images/smart-spring-%E7%A8%8B%E5%BA%8F%E5%88%86%E5%B1%82.jpg)
 
 * *Controller/Restful*（接口路由层）：接受前台请求和参数并返回，前台参数校验。
 * *Biz*（聚合层）：调用各类业务服务（*Service*），聚合数据并格式化。

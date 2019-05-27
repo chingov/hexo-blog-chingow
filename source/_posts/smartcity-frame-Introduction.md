@@ -18,10 +18,10 @@ date: 2018-04-18 15:30:02
 <!-- more -->
 
 ### 功能概览
-![smart-spring-概览](http://ww3.sinaimg.cn/large/006tNc79ly1g3f6i7l6f1j31f40u048g.jpg)
+![smart-spring-概览](https://image.chingow.cn/images/smart-spring-%E6%A6%82%E8%A7%88.jpg)
 
 * 预定义常用开源组件依赖版本和插件配置信息，极大的简化了maven 配置
-* 拦截`Response`的返回值，自动封装成 [Result](https://upload-images.jianshu.io/upload_images/1720399-ef517a5be56903e8.png) 类型 
+* 拦截`Response`的返回值，自动封装成 [Result](https://image.chingow.cn/images/20190527174428.png) 类型 
 * 拦截`RuntimeException`异常，统一处理自动封装
 * 代码自动生成，自动生成 Mybatis-mapper代码
 * 简化参数校验流程
