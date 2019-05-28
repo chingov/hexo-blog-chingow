@@ -11,16 +11,14 @@ tags:
 ---
 ![题图](https://image.chingow.cn/background/006tNc79gy1g37jxk0kq5j327a0ki0th.jpg)
 
-关于如何搭建Hexo博客的文章已经有很多人写过了，并且有的大佬已经写的很深刻很到位了，为什么还要重复写一遍呢？直到我看到了这位同学的博客 [yearito](yearito.cn) **（ ps：本站的建站优化大都参考自这里）**，觉得说的很对
+关于如何搭建Hexo博客的文章已经有很多人写过了，并且有很多人已经写的很深刻很到位了，为什么还要重复写一遍呢？直到我看到了这位同学的博客 [yearito](yearito.cn) **（ ps：本站的建站优化大都参考自这里）** ，我有了说服自己的理由：
 
 * 你可以参考别人的技术方案，集众所长，亲自实践，然后融入自己的思考写出一篇新文章
 * 即使并没有做出创新性的贡献，自己重新归纳一遍也有助于梳理流程，深化理解
+
 <!--more-->
-
-现在百度 Google 很方便，动动手指就可以搜索到想要的答案，但是太多人都是**`『顺手拈来、过目就忘』`**，下次遇到同样的问题再搜索一遍。
-
-> 为什么会这样呢？不善于总结，不情愿动手思考，时而久之就会变成所谓的 “代码搬运工” ！
----
+<p id="div-border-left-red">现在百度 Google 很方便，动动手指就可以搜索到想要的答案，但是太多人都是**『顺手拈来、过目就忘』**，下次遇到同样的问题再搜索一遍。
+为什么会这样呢？不善于总结，不情愿动手思考，时而久之就会变成所谓的 “代码搬运工” ！<p>
 
 闲话不多说了，我们开始吧！
 
@@ -51,9 +49,10 @@ $ npm install -g hexo-cli
 
 ### 本地启动hexo
 
-创建一个博客目录（例如 `/my-blog`），cd 到该目录下，执行初始化命令
+创建一个博客目录（例如 `/my-blog`），在此目录下，执行初始化命令
 
 ``` bash
+$ mkdir -p my-blog
 $ cd my-blog
 $ hexo init
 ```
@@ -84,6 +83,8 @@ $ hexo server       # 在本地服务器运行
 
 在浏览器输入IP地址 http://localhost:4000  就可以看到我们熟悉的** Hello Word **了。
 
+![Hello Word](http://image.chingow.cn/images/d7cced3b-950e-6d7b-6edc-dc3058646ddb.png)
+
 ### 常用命令简化和组合
 
 ``` bash
@@ -100,9 +101,10 @@ $ hexo d    # 等同于hexo deploy
 $ hexo s -g -p 80
 ```
 
-## 安装next主题
+## 安装Next主题
 
-hexo 安装主题的方式非常简单, 只需要将主题文件拷贝至站点目录的 `themes` 目录下, 然后修改站点配置文件`_config.yml`中的 `theme`字段为 `next`即可
+hexo 安装主题的方式非常简单, 只需几个简单的命令即可。
+将Next主题文件拷贝至**themes**目录下, 然后修改<span id="inline-blue">站点配置文件</span>`_config.yml`中的 `theme`字段为`next`即可。
 
 cd 到博客的根目录下执行以下命令下载主题文件：
 
@@ -114,7 +116,7 @@ $ vim _config.yml
 theme: next
 ```
 
-清除 `hexo 缓存`，重启服务
+清除 **hexo**缓存，重启服务
 
 ``` bash
 $ hexo clean
