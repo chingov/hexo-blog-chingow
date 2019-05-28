@@ -13,18 +13,20 @@ abbrlink: c7372a12
 本文介绍了在 Next 主题的基础上整体布局美化的方案，主要包括:
 
 + Font：字体、动态背景canvas_ribbon
-+ Top：进度条、fork-github、菜单高度收缩
++ Top：进度条、Follow me、菜单背景收缩
 + Footer：备案显示、运行时间、访客统计
 + Sidebar：近期文章、浏览进度、左边显示、目录展开
 
-大家可以选择自己喜欢的方案美化自己的博客。
+{% note info %}
+大家可以选择喜欢的方案美化自己的博客，当然最好可以再加入点自己的想法改造。
+{% endnote %}
 
-  <!--more-->
+<!--more-->
 
 ## Font
 
 前端的美化，可以做的比较多，比如修改字体、修改背景等等。
-首先修改主题配置文件 _config.yml里的配置`font`：
+首先在 <span id="inline-purple">主题配置文件</span> _config.yml 中修改配置`font`：
 
 ``` yaml themes/next/_config.yml
 font:
@@ -35,7 +37,7 @@ font:
 
 默认的字体是微软雅黑，有点审美疲劳了 (lll￢ω￢)，在浏览其他人网站的时候看到了一种很有科技感的字体 『**Monda**』，感觉还是不错的。如何应用到自己的博客呢？
 首先，可以从 [frontyukle](https://www.fontyukle.net/cn/1,MONDA) 下载字体文件，在服务器上安装。
-然后修改主题配置里的全局字体配置：
+然后在 <span id="inline-purple">主题配置文件</span> _config.yml 中的修改全局字体配置：
 
 ``` diff themes/next/_config.yml
 global:
@@ -53,7 +55,7 @@ global:
 $ git clone https://github.com/theme-next/theme-next-canvas-ribbon themes/next/source/lib/canvas_ribbon
 ```
 
-然后，修改主题配置文件 _config.yml 里的配置`canvas_ribbon`：
+然后，在 <span id="inline-purple">主题配置文件</span> _config.yml 中的修改配置`canvas_ribbon`：
 
 ``` yaml themes/next/_config.yml
 canvas_ribbon:
@@ -62,6 +64,8 @@ canvas_ribbon:
 ```
 
 ## Top
+
+顶部我们保持简洁为主，设置主要包括：进度条、Fork、菜单等等。
 
 ### 加载进度条
 
@@ -72,11 +76,14 @@ canvas_ribbon:
 $ git clone https://github.com/theme-next/theme-next-pace themes/next/source/lib/pace
 ```
 
-然后，修改主题配置文件 _config.yml 里的配置`pace` 改为 `true`，并从上面提供的样式中选择一种填入`pace_theme`中就可以了。
+然后，修改 <span id="inline-purple">主题配置文件</span> _config.yml 中的配置`pace` 改为 `true`，并从上面提供的样式中选择一种填入`pace_theme`中就可以了。
 
-### 右上角的Github样式
+### 右上角的Follow-Github
 
-修改主题配置文件 _config.yml 里的配置`github_banner`：
+如果你想大家在看博客的时候能快速链接到你的Github，不妨设置**Github_banner**，效果图如下：
+![github_banner](https://image.chingow.cn/images/23aaa7f0-a7e7-b170-deef-a8ffb649a473.png "github_banner")
+
+修改 <span id="inline-purple">主题配置文件</span> _config.yml 中的配置`github_banner`，在`permalink`里配置自己的github地址：
 
 ``` yaml themes/next/_config.yml
 github_banner:
@@ -84,12 +91,13 @@ github_banner:
   permalink: https://github.com/yourname
 ```
 
-### 菜单显示
+### 菜单背景收缩
 
 在 Muse主题方案中 Header 和 Footer 是没有背景色的，的颜色与内容一致不易区分，而且网站标题的字体不够明显，我做了几个修改
 
 + 头部和底部颜色修改
 + 网站标题加粗和颜色修改
++ 菜单字体增大显示
 
 在主题自定义样式文件中添加以下样式：
 
@@ -114,6 +122,15 @@ github_banner:
   padding-bottom: 30px;
 }
 
+// 加宽菜单间距，放大菜单图标
+#menu .menu-item {
+  margin: 0px 14px;
+
+  .fa {
+    font-size: 16px;
+  }
+}
+
 // Muse主题下自定义样式
 if hexo-config('scheme') == "Muse" {
   .site-meta {
@@ -130,8 +147,7 @@ if hexo-config('scheme') == "Muse" {
 }
 ```
 
-改完才发现顶部菜单的空间太大了，于是调节菜单高度
-在主题自定义布局文件中添加以下代码：
+改完才发现顶部菜单的空间太大了，于是调节菜单高度，在自定义布局文件中添加以下代码：
 
 ``` html themes/next/layout/_custom/custom.swig
 
@@ -170,10 +186,12 @@ mobile() {
 
 ## Footer
 
+底部设置的可完性就比较多了，建站信息、备案信息、以及访客和统计信息等信息都可以个性化定制。
+
 ### ICP备案和公安备案
 
 我们的网站已经有备案号了，但是应该如何添加备案号到博客最下面呢？
-首先，在主题配置文件 _config.yml 里的配置添加备案配置：
+首先，在 <span id="inline-purple">主题配置文件</span> _config.yml 中的配置添加备案配置：
 
 ``` diff themes/next/_config.yml
  # 这里打开备案信息，填写ICP备案号
@@ -196,7 +214,7 @@ footer:
 +    gongan: 公网安备%s号
 ```
 
-接下来，修改原有的布局文件中备案样式的代码：
+接下来，删除原有的布局文件中备案样式的代码：
 
 ``` diff  themes/next/layout/_partials/footer.swig
   #}{% set current = date(Date.now(), "YYYY") %}{#
@@ -212,7 +230,7 @@ footer:
   {% if config.symbols_count_time.total_symbols %}
 ```
 
-最后，在主题布局文件中添加我们的备案样式：
+最后，在主题布局文件中添加我们自定义的备案样式：
 
 ``` diff  themes/next/layout/_layout.swig
   <div class="footer-inner">
@@ -234,9 +252,9 @@ footer:
   </div>
 ```
 
-### 显示网站的建站运行时间
+### 网站的建站时间
 
-首先，先给网站添加建站时间。修改主题配置文件 _config.yml 里的配置`since` ：
+Next主题已经内置了添加建站时间。在 <span id="inline-purple">主题配置文件</span> _config.yml 中修改配置`since` ：
 
 ``` yaml themes/next/_config.yml
 footer:
@@ -252,8 +270,12 @@ footer:
 
 ```
 
-此时，建站时间的 @since 就修改好了，接下来我们显示网站的运行时间（在这里我做了一些个性化文字显示，可供大家参考）。
-在主题配置文件 _config.yml 里的添加 `ages`配置：
+### 网站的运行时间
+
+接下来我们显示网站的运行时间，在这里我做了一些个性化文案，可供大家参考：
+![网站建站运行时间](https://image.chingow.cn/images/00c3834a-cf72-22a3-cd7c-6486649fd648.png "网站建站运行时间")
+
+在 <span id="inline-purple">主题配置文件</span> _config.yml 中的添加 `ages`配置：
 
 ``` yaml themes/next/_config.yml
   ages: # site running time
@@ -301,12 +323,14 @@ footer:
 
 ### 添加访客统计
 
-该功能由 [不蒜子](http://ibruce.info/2015/04/04/busuanzi/) 提供。UV：独立访客数，PV：网站浏览量，访客数和浏览量的区别在于一个用户连续点击n篇文章，会记录n次浏览量，但只记录一次访客数。
-{% note %}
+该功能由 [不蒜子](http://ibruce.info/2015/04/04/busuanzi/) 提供。UV：独立访客数，PV：网站浏览量，访客数和浏览量的区别在于一个用户连续点击n篇文章，会记录n次浏览量，但只记录一次访客数，效果如图：
+![网站访客统计](https://image.chingow.cn/images/0298aada-faa2-1f09-f68a-e0382168a5ed.png "网站访客统计")
+
+{% note info %}
 由于不蒜子是基于域名来进行统计计算的，所以通过 localhost:4000 端口访问的时候统计数据UV和PV都会异常的大，属于正常现象。
 {% endnote %}
 
-首先，在主题配置文件中打开不算子功能：
+首先，在 <span id="inline-purple">主题配置文件</span> _config.yml 中打开不蒜子功能：
 
 ``` yaml themes\next\_config.yml
 busuanzi_count:
@@ -375,9 +399,15 @@ footer:
 
 ## Sidebar
 
+侧边栏里的信息有很多，比如站点信息、RSS、链接信息、目录信息等等，我们要有选择性的显示。尽量保持Next主题的宗旨 -- <span id="inline-green">简洁</span>
+
 ### 显示近期文章
 
-在主题配置文件中添加近期文章`recent_posts`的配置：
+当你新写了一些好文章，想尽快告诉大家改怎么办呢？放在侧边栏是最合适不过了～(￣▽￣～)(～￣▽￣)～ 比如这样：
+![近期文章](https://image.chingow.cn/images/f2840b83-ff46-dd56-0aa1-1af57c5e5dad.png "近期文章")
+
+首先先配置开关和文案，便于随时修改。
+在 <span id="inline-purple">主题配置文件</span> _config.yml 中添加近期文章`recent_posts`的配置：
 
 ``` yaml  themes/next/_config.yml
 # 近期文章
@@ -421,7 +451,7 @@ sidebar:
 
 ### 显示当前浏览进度
 
-在主题配置文件中修改`back2top`的`scrollpercent`：
+在 <span id="inline-purple">主题配置文件</span> _config.yml 中修改`back2top`的`scrollpercent`：
 
 ``` yaml themes\next\_config.yml
 back2top:
@@ -430,11 +460,20 @@ back2top:
   scrollpercent: true  #  浏览页面的时候显示当前浏览进度  
 ```
 
+配置完之后，发现这个按钮颜色有点单调，让它炫酷点的吧 <(￣ˇ￣)/ ，在自定义样式文件中添加如下样式：
+
+``` css themes/next/source/css/_custom/custom.styl
+// 回到顶部样式
+.back-to-top .fa-arrow-up:before{
+  color: rgb(random-color(0, 255) - 50%, random-color(0, 255) - 50%, random-color(0, 255) - 50%);
+}
+```
+
 ### 侧边栏移到左边显示
 
-我们习惯了导航菜单在左边的格式，因此萌发了把主题侧边栏放在左侧的想法。
+用惯了**Ofice**的人习惯导航菜单在左边的格式，如何把侧边栏放在左侧呢？
 Next 主题中 Pisces 和 Gemini 支持通过主题配置文件来将侧边栏置于左侧或右侧。
-修改主题配置文件 _config.yml 里的配置`sidebar` ：
+在 <span id="inline-purple">主题配置文件</span> _config.yml 中修改配置`sidebar` ：
 
 ``` yaml  themes/next/_config.yml
 sidebar:
@@ -499,7 +538,7 @@ body {
 ### 侧边栏目录展开
 
 侧边栏的TOC目录每次滑到哪儿，目录展开到哪。这样查看文章结构就很不方便，如何设置才能让文章目录默认全部都展开？
-修改主题配置文件 _config.yml 里的配置`toc` ：
+在 <span id="inline-purple">主题配置文件</span> _config.yml 中修改配置`toc` ：
 
 ``` yaml  themes/next/_config.yml
 toc:
