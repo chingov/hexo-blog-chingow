@@ -91,7 +91,7 @@ footer:
   ages: # site running time
     enable: true
     birthday: 20190419
-    color: "#1890ff"
+    color: "#1094e8"
 
   # Any custom text can be defined here.
   #custom_text: Hosted by <a href="https://pages.coding.me" class="theme-link" rel="noopener" target="_blank">Coding Pages</a>

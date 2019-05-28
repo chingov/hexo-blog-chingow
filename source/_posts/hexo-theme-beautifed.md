@@ -263,7 +263,7 @@ footer:
   ages: # site running time
     enable: true
     birthday: 20190419    # 网站运行时间
-    color: "#1890ff"  
+    color: "#1094e8"  
 ```
 
 在语言配置文件里，添加表述文案`age`：

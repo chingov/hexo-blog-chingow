@@ -15,7 +15,7 @@ Next主题内提供了很多功能来让内容更加丰富，本文介绍了如�
 + 模板设置
 + 文章发布修改时间、字数统计
 + 文章版权声明
-+ 文章内链接、底部标签图标
++ 链接样式、底部标签样式
 + 代码块复制、显示和隐藏
 + 草稿和发布
 <!--more-->
@@ -168,26 +168,57 @@ copyright:
 
 ## 链接样式
 
-主题自带的样式在hover时是灰色的，颜色不明显。修改全局的基本变量：
+主题自带的链接样式在hover时是灰色的，颜色不明显。在自定义样式文件中添加样式：
 
-``` diff themes/next/source/css/_common/scaffolding/base.styl
-&:hover {
-- color: $link-hover-color;
-- border-bottom-color: $link-decoration-hover-color;
-+ color: #0593d3;
-+ order-bottom: none;
-+ border-bottom: 1px solid #0593d3;
+``` css themes/next/source/css/_custom/custom.styl
+
+$link-color = #2780e3;
+$link-hover-color = #1094e8;
+$sidebar-link-hover-color = #0593d3;  
+
+// 普通链接样式
+a, span.exturl {
+  &:hover {
+    color: $link-hover-color;
+    border-bottom-color: $link-hover-color;
+  }
+  // For spanned external links.
+  cursor: pointer;
 }
-```
 
-修改sidebar里目录链接的hover样式：
+// 侧边栏链接样式
+.sidebar a, .sidebar span.exturl{
+  &:hover {
+    color: $sidebar-link-hover-color;
+    border-bottom-color: $sidebar-link-hover-color;
+  }
+}
 
-``` diff themes/next/source/css/_common/components/sidebar/sidebar-toc.styl
-&:hover {
--	color: $toc-link-hover-color;
--	border-bottom-color: $toc-link-hover-border-color;
-+	color: #0593d3;
-+	border-bottom-color: #0593d3;
+// 侧边栏目录链接样式
+.post-toc ol a {
+  &:hover {
+    color: $sidebar-link-hover-color;
+    border-bottom-color: $sidebar-link-hover-color;
+  }
+}
+
+//文章内链接文本样式
+.post-body p a{
+  color: $link-color;
+  text-decoration: none;
+  border-bottom: none;
+  &:hover {
+    color: $link-hover-color;
+    text-decoration: underline;
+    border-bottom-color: $link-hover-color;
+  }
+}
+
+// 文章内上下一页链接样式
+.post-nav-prev a , .post-nav-next a{
+  &:hover {
+    color: $link-hover-color;
+  }
 }
 ```
 
