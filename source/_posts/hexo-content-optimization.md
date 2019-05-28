@@ -258,8 +258,6 @@ copy_button:
 
 --- 待完成 ---
 
----
-
 ## 草稿和发布
 
 一般我们都会使用` hexo new <title> `来建立文章，这种建立方法会将新文章建立在 source/_posts 目录下，当使用 hexo generate 编译文件时，会将其 HTML 结果编译在 public 目录下，之后` hexo server `将会把 public 目录下所有文章发布。

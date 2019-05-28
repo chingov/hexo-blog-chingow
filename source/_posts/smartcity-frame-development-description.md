@@ -201,7 +201,7 @@ public interface CommonEnum {
     }    
 }
 ```
----
+
 #### 2. 定义异常返回值
 ``` java
 public enum ReturnCode implements IReturnCode {
@@ -218,7 +218,6 @@ public enum ReturnCode implements IReturnCode {
 * 如项目有core包，可全部定义在core中，避免重复业务
 * 抛出异常有助于自己排查问题，也便于前端人员定位问题*
 
----
 #### 3. 定义 *dubbo-api* 
 * 定义接口类和接口方法，在api包 *resources.dubbo* 文件夹下*dubbo-consume-demo.xml* 中声明接口
 
@@ -241,7 +240,6 @@ public enum ReturnCode implements IReturnCode {
     ```
     `validation`为可选属性，缺省值是`false`，建议开启。开启验证后[ Hibernate Validator ](https://blog.csdn.net/danielzhou888/article/details/74740817)注解生效，会对接口参数进行校验
 
----
 #### 4. *dubbo-Service*实现*dubbo-api*
 ``` java
 @Service("demoService")
@@ -263,8 +261,6 @@ public class DemoServiceImpl implements DemoService {
 ```
 @Service注解后指定 <*bean id*>（与api.xml中定义的id需相同），spring.context.component-scan 扫描后即可自动托管bean对象
 
-
----
 #### 5. 配置服务提供者
 * 在 *pom.xml* 中依赖 api-jar 包
 * 在 *resources.META-INF.spring* 目录（缺省目录）内新建配置文件`dubbo-provider.xml`
@@ -302,12 +298,10 @@ public class DemoServiceImpl implements DemoService {
     ```
     `retries`为可选属性，缺省值是`2`，设置为0后可避免服务堵塞情况下自动重试导致事务问题。
 
----
 #### 6. 启动服务提供者
 * 运行 *Provider.java* 内的`main()`方法即可启动消费者
 * 更改 *src.assembly.bin* 目录内启动脚本中`APP_MAINCLASS`的路径为 *Provider.java*
 
----
 #### 7. 配置服务消费者
 * 在 *pom.xml* 中依赖 api-jar 包
 * 在 *resources* 目录内新建配置文件`dubbo-consumer.xml`，并托管给Spring管理（在*web.xml*配置或者 *application-context.xml* 配置都可以）
@@ -345,8 +339,6 @@ public class DemoServiceImpl implements DemoService {
     + `registry`中`check`属性是检查注册中心是否正常
     + `consumer`中`check`属性时检查对应服务是否正常注册
 * 接口如果不是全部需要使用建议单独声明需要的接口，无效声明过多引起连接资源浪费
-
-----
 
 #### 8. 完成 *Restful* 接口
 ``` java
@@ -401,7 +393,6 @@ public class DemoRestful {
     }
     ```
 
----
 #### 9. 完成*Controller* 接口
 ``` java
 @Controller
@@ -428,7 +419,6 @@ public class DemoFormVo {
     + 实体类的注解使用`@ModelAttribute`，且不在需要加注参数注解
     + 使用[ Hibernate Validator ](https://blog.csdn.net/danielzhou888/article/details/74740817)框架的注解进行参数合法性验证
 
----
 #### 10. 完成*biz*层逻辑
 ``` java
 @Service
@@ -465,7 +455,6 @@ public class DemoBiz {
 ```
 及时识别业务异常，记录日志并抛出
 
----
 #### 11. 使用*Redis*缓存
 * 在*application-context.xml*中引入bean配置 `<import resource="classpath*:cache/*.xml"/>` ，并在配置文件中配置以下属性
     + redis.host  
@@ -477,7 +466,6 @@ public class DemoBiz {
     + redis.maxTotal    连接池最大连接数，缺省值50，可不配置
 * 调用*RedisUtils*工具类里封装的方法即可。
 
----
 #### 12. 处理自定义异常
 * 在*web.xml* 里配置SpringMVC的` servlet-class`。<br> 缺省配置的处理异常 class 为 `com.iflytek.sgy.social.web.core.exception.ExceptionDispatcherServlet` 
 * 如果需要处理自定义异常（*注：此功能在 V 0.5.0版本后方可使用*），则需要编写实现类继承<br>`com.iflytek.sgy.social.web.core.exception.AbstractExceptionDispatcherServlet`，重载`handleOtherException()`方法，覆盖缺省配置。
@@ -500,7 +488,6 @@ public class DemoBiz {
 
     ```
 
----
 #### 13. 实现集中管理 *APP Session*
 *注：此功能在 V 0.5.0版本后方可使用。*
 
@@ -560,7 +547,6 @@ public class DemoBiz {
     ```
 * 更改*web.xml* 里` servlet-class` 为 `com.iflytek.sgy.social.app.core.extension.ServletContainer`
 
----
 #### 14. 自动执行*SQL*初始化脚本
 *注：此功能在 V 0.5.0版本后方可使用。*
 
@@ -596,8 +582,6 @@ public class DemoBiz {
     + `check`标签是表名
     + `sql`标签是待执行*sql*，建表语句 or 数据初始化语句
 
-    
----
 #### 15. 配置常用*maven*插件
 *注：此功能在 V 0.5.0版本后方可使用。*
 
@@ -629,8 +613,7 @@ public class DemoBiz {
         </plugin>
     </plugins>
     ```
-    
----
+
 #### 16. 打包发布
 * 根据环境执行不同环境的打包命令，不同环境对于不同的log过滤等级。<br> 命令 `mvn clea package -Pdeploy`
     + *local* -- DEBUG
@@ -641,6 +624,3 @@ public class DemoBiz {
     
 * *注：以下功能在 V 0.5.0版本后方可使用。*
     + 除local环境打包后读取classpath下的配置文件，其他环境默认读取`/iflytek/zhcs/config/`目录下的配置，<br> 如需读取其他目录，可在pom.xml里覆盖配置 `environment.path`    
-
-
-

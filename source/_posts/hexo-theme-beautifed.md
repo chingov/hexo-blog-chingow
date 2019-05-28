@@ -61,8 +61,6 @@ canvas_ribbon:
   size: 90	# 设置丝带宽度
 ```
 
----
-
 ## Top
 
 ### 加载进度条
@@ -169,8 +167,6 @@ mobile() {
   ...
 }
 ```
-
----
 
 ## Footer
 
@@ -376,8 +372,6 @@ footer:
   color: #1890ff;
 }
 ```
-
----
 
 ## Sidebar
 
