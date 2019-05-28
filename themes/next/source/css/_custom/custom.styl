@@ -4,21 +4,6 @@ $link-color = #2780e3;
 $link-hover-color = #1094e8;
 $sidebar-link-hover-color = #0593d3;
 
-
-// 侧边栏放在左边
-.sidebar-toggle {
-  left: 30px;
-}
-
-.sidebar {
-  left: 0px;
-}
-
-//窗口效果相关样式
-.sidebar {
-  box-shadow: none;
-}
-
 // Next.Muse中为Header和Footer添加背景色
 #header, #footer {
   background-color: rgb(245, 245, 245);
@@ -90,13 +75,9 @@ if hexo-config('scheme') == "Muse" {
     padding-bottom: 8px;
     border-bottom: 1px solid #e6e6e6;
 } 
-
 .post-body h2{
     border-bottom: 2px solid #e6e6e6;
 }
-
-
-// 
 
 // 文章摘要图片的自定义样式
 img.img-topic {
@@ -184,6 +165,15 @@ section.posts-expand .post-body .fancybox {
   font-size: 15px;
 }
 
+// 侧边栏放在左边
+.sidebar-toggle {
+  left: 30px;
+}
+.sidebar {
+  left: 0px;
+  box-shadow: none;
+}
+
 // 侧栏近期文章标题
 .links-of-blogroll-title {
   margin: 6px 15px 0 10px;
@@ -193,7 +183,6 @@ section.posts-expand .post-body .fancybox {
   cursor: pointer;
 }
 
-*/
 // 时间轴样式
 .posts-collapse {
     margin: 50px 0px;

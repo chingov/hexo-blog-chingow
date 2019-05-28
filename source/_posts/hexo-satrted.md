@@ -9,7 +9,7 @@ tags:
     - Hexo
 
 ---
-![题图](https://image.chingow.cn/background/006tNc79gy1g37jxk0kq5j327a0ki0th.jpg)
+![题图](https://image.chingow.cn/background/006tNc79gy1g37jxk0kq5j327a0ki0th.jpg "题图")
 
 关于如何搭建Hexo博客的文章已经有很多人写过了，并且有很多人已经写的很深刻很到位了，为什么还要重复写一遍呢？直到我看到了这位同学的博客 [yearito](yearito.cn) **（ ps：本站的建站优化大都参考自这里）** ，我有了说服自己的理由：
 
@@ -83,7 +83,7 @@ $ hexo server       # 在本地服务器运行
 
 在浏览器输入IP地址 http://localhost:4000  就可以看到我们熟悉的** Hello Word **了。
 
-![Hello Word](http://image.chingow.cn/images/d7cced3b-950e-6d7b-6edc-dc3058646ddb.png)
+![Hello Word](https://image.chingow.cn/images/d7cced3b-950e-6d7b-6edc-dc3058646ddb.png "Hello Word")
 
 ### 常用命令简化和组合
 
@@ -104,7 +104,7 @@ $ hexo s -g -p 80
 ## 安装Next主题
 
 hexo 安装主题的方式非常简单, 只需几个简单的命令即可。
-将Next主题文件拷贝至**themes**目录下, 然后修改<span id="inline-blue">站点配置文件</span>`_config.yml`中的 `theme`字段为`next`即可。
+将Next主题文件拷贝至**themes**目录下, 然后修改 <span id="inline-blue">站点配置文件</span> _config.yml 中的 `theme`字段为`next`即可。
 
 cd 到博客的根目录下执行以下命令下载主题文件：
 

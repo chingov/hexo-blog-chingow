@@ -35,7 +35,7 @@ date: {{ date }}
 
 ## 文章发布修改时间
 
-在主题配置文件中修改`post_meta`，可用于控制信息的显示：
+在 <span id="inline-purple">主题配置文件</span> _config.yml 中修改`post_meta`，可用于控制信息的显示：
 
 ``` yaml themes/next/_config.yml
 post_meta:
@@ -56,7 +56,7 @@ post_meta:
 $ npm install hexo-symbols-count-time --save
 ```
 
-在**站点配置文件**中添加`symbols_count_time`配置，这些配置项主要用于控制每项统计信息是否显示：
+在 <span id="inline-blue">站点配置文件</span> _config.yml 中添加`symbols_count_time`配置，这些配置项主要用于控制每项统计信息是否显示：
 
 ``` yaml _config.yml
 symbols_count_time:
@@ -66,7 +66,7 @@ symbols_count_time:
   total_time: false     # 估算站点总阅读时间
 ```
 
-在**主题配置文件**中做如下修改，这些配置项主要用于控制统计信息的显示样式：
+在 <span id="inline-purple">主题配置文件</span> _config.yml 中做如下修改，这些配置项主要用于控制统计信息的显示样式：
 
 ``` yaml themes/next/_config.yml
 symbols_count_time:
@@ -79,7 +79,7 @@ symbols_count_time:
 
 ## 文末版权声明
 
-在主题配置文件中开启文章底部的版权声明，版权声明默认使用 [CC BY-NC-SA 4.0](https://creativecommons.org/licenses/by-nc-sa/4.0/) 许可协议，用户可以根据自身需要修改 `licence` 字段变更协议：
+在 <span id="inline-purple">主题配置文件</span> _config.yml 中开启文章底部的版权声明，版权声明默认使用 [CC BY-NC-SA 4.0](https://creativecommons.org/licenses/by-nc-sa/4.0/) 许可协议，用户可以根据自身需要修改 `licence` 字段变更协议：
 
 ``` yaml themes/next/_config.yml
 creative_commons:
@@ -246,7 +246,7 @@ Next中使用 [FontAwesome](https://fontawesome.com/v4.7.0/icons/) 作为图标�
 
 ## 代码复制
 
-在主题配置文件中开启代码复制功能：
+在 <span id="inline-purple">主题配置文件</span> _config.yml 中开启代码复制功能：
 
 ``` yaml themes/next/_config.yml
 copy_button:

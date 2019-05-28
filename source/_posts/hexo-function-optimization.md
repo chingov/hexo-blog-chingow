@@ -60,7 +60,7 @@ date: 2019-05-19 22:08:03
 ## 在线联系插件DaoVoice
 
 首先去 [DaoVoice官网](http://dashboard.daovoice.io) 注册，这里需要一个 [邀请码](http://dashboard.daovoice.io/get-started?invite_code=3d64b7fd)，贴一个3d64b7fd，或者直接点击邀请码的链接。
-注册后就可以查看你的`app_id` ，复制app_id，在**主题配置**文件中添加daovoice的配置：
+注册后就可以查看你的`app_id` ，复制app_id，在 <span id="inline-purple">主题配置文件</span> _config.yml 中添加daovoice的配置：
 
 ``` yaml themes\next\_config.yml
 # Online contact
@@ -97,7 +97,7 @@ daovoice_app_id: {your app_id}
 $ npm install hexo-generator-searchdb --save
 ```
 
-在**主题配置**文件中修改相关字段：
+在 <span id="inline-purple">主题配置文件</span> _config.yml 中修改配置`local_search`：
 
 ``` yaml themes\next\_config.yml
 local_search:
@@ -127,7 +127,7 @@ local_search:
 $ npm install hexo-related-popular-posts --save
 ```
 
-在主题配置文件中开启相关文章推荐功能：
+在 <span id="inline-purple">主题配置文件</span> _config.yml 中开启相关文章推荐功能：
 
 ``` yaml themes/next/_config.yml
 related_posts:
@@ -171,7 +171,7 @@ related_posts:
 在LeanCloud中的Class可以理解为数据库中的数据表。Counter用于存储记录文章访问量，记录是以url作为唯一依据的，所以根据默认的permalink组成结构，如果你更改了文章的发布日期和标题中的任意一个，都会造成文章阅读数值的清零重计。
 {% endnote %}
 
-然后，在主题配置文件中开启评论功能即可：
+然后，在 <span id="inline-purple">主题配置文件</span> _config.yml 开启评论功能即可：
 
 ``` yaml themes/next/_config.yml
 valine:
@@ -229,7 +229,7 @@ comments: false
 $ git clone https://github.com/theme-next/theme-next-fancybox3 themes/next/source/lib/fancybox
 ```
 
-在主题配置文件中设置 `fancybox: true`：
+在 <span id="inline-purple">主题配置文件</span> _config.yml 中设置 `fancybox: true`：
 
 ``` yaml themes\next\_config.yml
 fancybox: true
