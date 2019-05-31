@@ -1,10 +1,10 @@
 ---
-title: Hexo 搭建个人博客：功能强化
+title: Hexo+NexT(v7.0+) 搭建博客：功能强化
 copyright: true
 related_posts: true
 tags:
   - Hexo
-  - Next
+  - NexT
 categories: 博客
 abbrlink: e0970dc8
 date: 2019-05-19 22:08:03

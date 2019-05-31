@@ -1,8 +1,8 @@
 ---
-title: Hexo 搭建个人博客：主题美化
+title: Hexo+NexT(v7.0+) 搭建博客：主题美化
 tags:
   - Hexo
-  - Next
+  - NexT
 categories: 博客
 date: 2019-05-17 10:07:53
 copyright: true
@@ -10,7 +10,7 @@ related_posts: true
 abbrlink: c7372a12
 ---
 
-本文介绍了在 Next 主题的基础上整体布局美化的方案，主要包括:
+本文介绍了在 NexT(v7.0+) 主题的基础上整体布局美化的方案，主要包括:
 
 + Font：字体、动态背景canvas_ribbon
 + Top：进度条、Follow me、菜单背景收缩
@@ -254,7 +254,7 @@ footer:
 
 ### 网站的建站时间
 
-Next主题已经内置了添加建站时间。在 <span id="inline-purple">主题配置文件</span> _config.yml 中修改配置`since` ：
+NexT主题已经内置了添加建站时间。在 <span id="inline-purple">主题配置文件</span> _config.yml 中修改配置`since` ：
 
 ``` yaml themes/next/_config.yml
 footer:
@@ -403,10 +403,10 @@ footer:
 
 ### 显示近期文章
 
-当你新写了一些好文章，想尽快告诉大家改怎么办呢？放在侧边栏是最合适不过了～(￣▽￣～)(～￣▽￣)～ 比如这样：
+当你新写了一些好文章，想尽快告诉大家要怎么办呢？放在侧边栏里那是最合适不过了～(￣▽￣～)(～￣▽￣)～ 比如这样：
 ![近期文章](https://image.chingow.cn/images/f2840b83-ff46-dd56-0aa1-1af57c5e5dad.png "近期文章")
 
-首先先配置开关和文案，便于随时修改。
+首先配置开关和文案，便于随时修改。
 在 <span id="inline-purple">主题配置文件</span> _config.yml 中添加近期文章`recent_posts`的配置：
 
 ``` yaml  themes/next/_config.yml
@@ -469,10 +469,10 @@ back2top:
 }
 ```
 
-### 侧边栏移到左边显示
+### 侧边栏移到左边
 
 用惯了**Ofice**的人习惯导航菜单在左边的格式，如何把侧边栏放在左侧呢？
-Next 主题中 Pisces 和 Gemini 支持通过主题配置文件来将侧边栏置于左侧或右侧。
+NexT 主题中 Pisces 和 Gemini 支持通过主题配置文件来将侧边栏置于左侧或右侧。
 在 <span id="inline-purple">主题配置文件</span> _config.yml 中修改配置`sidebar` ：
 
 ``` yaml  themes/next/_config.yml

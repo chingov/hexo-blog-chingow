@@ -1,10 +1,10 @@
 ---
-title: Hexo 搭建个人博客：性能优化
+title: Hexo+NexT(v7.0+) 搭建博客：性能优化
 copyright: true
 related_posts: true
 tags:
   - Hexo
-  - Next
+  - NexT
   - 七牛云
 categories: 博客
 abbrlink: e824570
@@ -27,7 +27,7 @@ date: 2019-05-20 17:15:23
 
 在阅读下文之前，如果你还不知道 CDN 是什么，请先移步[百度百科：CDN词条](https://baike.baidu.com/item/CDN)进行一些了解。
 在所有静态资源中，对加载速度影响较大且存在大幅优化空间的主要还是「JavaScript 第三方库」脚本，设定成合适的 CDN 地址，此特性可以加速静态资源的加载。
-对于我 Hexo 博客来说，Next 主题已经做好了配置，只需添加 CDN 加载源，将其改为从公共 CDN 加载即可。
+对于我 Hexo 博客来说，NexT 主题已经做好了配置，只需添加 CDN 加载源，将其改为从公共 CDN 加载即可。
 在 <span id="inline-purple">主题配置文件</span> _config.yml 中修改`vendors`：
 
 ``` yaml themes/next/_config.yml

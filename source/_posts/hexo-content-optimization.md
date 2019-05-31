@@ -1,21 +1,22 @@
 ---
-title: Hexo 搭建个人博客：内容优化
+title: Hexo+NexT(v7.0+) 搭建博客：内容优化
 copyright: true
 related_posts: true
 tags:
   - Hexo
-  - Next
+  - NexT
 categories: 博客
 abbrlink: bd723aed
 date: 2019-05-18 16:08:13
 ---
 
-Next主题内提供了很多功能来让内容更加丰富，本文介绍了如何开启和定制这些功能，主要包括:
+NexT主题内提供了很多功能来让内容更加丰富，本文介绍了如何开启和定制这些功能，主要包括:
 
 + 模板设置
 + 文章发布修改时间、字数统计
 + 文章版权声明
 + 链接样式、底部标签样式
++ 图片尺寸处理
 + 代码块复制、显示和隐藏
 + 草稿和发布
 <!--more-->
@@ -242,7 +243,12 @@ a, span.exturl {
   </footer>
 ```
 
-Next中使用 [FontAwesome](https://fontawesome.com/v4.7.0/icons/) 作为图标库，用户可以在 FontAwesome 上找到心仪的图标来替换标签的字符前缀。
+NexT中使用 [FontAwesome](https://fontawesome.com/v4.7.0/icons/) 作为图标库，用户可以在 FontAwesome 上找到心仪的图标来替换标签的字符前缀。
+
+## 图片尺寸处理
+
+有时候原始图片的尺寸很突兀，但是在 **Hexo** 中使用 **Markdown** 原生的插入图片语法没办法设置图片大小，这一点让人很困扰。
+
 
 ## 代码复制
 
