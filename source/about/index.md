@@ -1,5 +1,4 @@
 ---
-title: 关于我
 date: 2018-04-19 01:13:35
 type: "about"
 comments: false
