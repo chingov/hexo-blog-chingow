@@ -28,3 +28,5 @@
       timer();
     </script>
   {% endif %}
+
+<script type="text/javascript" src="/js/custom/hexo_resize_image.js"></script>

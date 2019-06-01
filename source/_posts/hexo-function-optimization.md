@@ -9,6 +9,7 @@ categories: 博客
 abbrlink: e0970dc8
 date: 2019-05-19 22:08:03
 ---
+![Photo in Chongqing Fengjie](https://image.chingow.cn/background/20190602023505_JefG9q_6DE1E34E-037D-4EA6-A8CC-68280E0EAC1D-1264-00000122BCC398FB_tmp.jpeg "Photo in Chongqing Fengjie")
 
 开源的力量让第三方插件的支持越来越多，本文介绍了在如何利用插件来加强网站的功能，主要包括:
 
@@ -22,12 +23,13 @@ date: 2019-05-19 22:08:03
 
 ## 分类添加时间线
 
-归档页面的时间线会让文章显示得很有条理，但是分类里却没有，我们可以通过修改布局自己实现这个时间线功能。
+归档页面的时间线会让文章显示得很有条理，但是分类里却没有，可以通过修改布局自己实现这个时间线功能。
+
+![分类时间线](https://image.chingow.cn/images/20190602012728_SmUFAI_Screenshot?600x.jpeg"分类时间线")
 
 在主题的分类布局文件中添加以下代码：
 
 ``` diff themes/next/layout/category.swig
-
 	{% for post in page.posts %}
 +		{# Show year #}
 +			{% set year %}
@@ -59,8 +61,10 @@ date: 2019-05-19 22:08:03
 
 ## 在线联系插件DaoVoice
 
-首先去 [DaoVoice官网](http://dashboard.daovoice.io) 注册，这里需要一个 [邀请码](http://dashboard.daovoice.io/get-started?invite_code=3d64b7fd)，贴一个3d64b7fd，或者直接点击邀请码的链接。
-注册后就可以查看你的`app_id` ，复制app_id，在 <span id="inline-purple">主题配置文件</span> _config.yml 中添加daovoice的配置：
+该功能有 [DaoVoice](http://dashboard.daovoice.io) 插件提供，效果如图：
+![DaoVoice](https://image.chingow.cn/images/20190602013155_1T1X07_Screenshot.jpeg?350x"DaoVoice")
+
+首先去 [DaoVoice官网](http://dashboard.daovoice.io/get-started?invite_code=3d64b7fd) 注册，输入邀请码 3d64b7fd，注册后查看**app_id** 并复制，在 <span id="inline-purple">主题配置文件</span> _config.yml 中添加daovoice的配置：
 
 ``` yaml themes\next\_config.yml
 # Online contact
@@ -68,9 +72,9 @@ daovoice: true
 daovoice_app_id: {your app_id}
 ```
 
-然后在head的布局模板中插入相关代码：
-``` diff themes/next/layout/_partials/head.swig
+按照**应用设置**—>**安装到网站**的设置，在head的布局模板中插入相关 JavaScript 代码：
 
+``` diff themes/next/layout/_partials/head.swig
 +{% if theme.daovoice %}
 +	<script>
 +		(function(i,s,o,g,r,a,m){i["DaoVoiceObject"]=r;i[r]=i[r]||function(){(i[r].q=i[r].q||[]).push(arguments)},i[r].l=1*new Date();a=s.createElement(o),m=s.getElementsByTagName(o)[0];a.async=1;a.src=g;a.charset="utf-8";m.parentNode.insertBefore(a,m)})(window,document,"script",('https:' == document.location.protocol ? 'https:' : 'http:') + "//widget.daovoice.io/widget/${your_app_id}.js","daovoice")
@@ -85,11 +89,13 @@ daovoice_app_id: {your app_id}
 <script id="hexo.configurations">
 ```
 
-具体样式设计可以在 应用设置-->聊天设置 后边改。
+具体样式设计可以在 **应用设置** -> **聊天设置** 后边改。
 
 ## 站内搜索
 
-该功能由 [hexo-generator-searchdb](https://github.com/theme-next/hexo-generator-searchdb) 提供。
+该功能由 [hexo-generator-searchdb](https://github.com/theme-next/hexo-generator-searchdb) 提供，效果如图：
+
+![站内搜索](https://image.chingow.cn/images/20190602014351_let2yO_Screenshot.jpeg?900x"站内搜索")
 
 在根目录下执行以下命令安装相关依赖：
 
@@ -119,7 +125,9 @@ local_search:
 
 ## 相关文章推荐
 
-该功能由 [hexo-related-popular-posts](https://github.com/tea3/hexo-related-popular-posts) 插件提供
+该功能由 [hexo-related-popular-posts](https://github.com/tea3/hexo-related-popular-posts) 插件提供，效果如图：
+
+![文章推荐](https://image.chingow.cn/images/20190602014455_EGjrzz_Screenshot.jpeg?350x"文章推荐")
 
 在站点根目录中执行以下命令安装依赖：
 
@@ -160,11 +168,13 @@ related_posts:
 
 ## Valine评论
 
+![Valine评论](https://image.chingow.cn/images/20190602015658_Y7Rj8t_Screenshot.jpeg?820x"Valine评论")
+
 > Valine 诞生于 2017 年 8 月 7 日，是一款基于 [LeanCloud](https://leancloud.cn) 提供后端数据服务的快速、简洁且高效的无后端评论系统，支持匿名评论、持Markdown、Emoji等都是它的绝对优势，而且 Next 主题也已经内置了 Valine 组件，使用起来非常方便。
 
 首先，在LeanCloud上注册账号并创建应用，设置LeanCloud的信息。
 
-在 **存储** -> **数据** 中 新建一个名为 Counter 的Class，ACL权限设置为 **无限制**：
+在 **存储** -> **数据** 中 新建一个名为` Counter` 的 Class，`ACL`权限设置为 **无限制**：
 在 **设置** -> **安全中心** 中添加博客域名到 Web 安全域名中，以保护LeanCloud应用的数据安全。
 
 {% note info %}

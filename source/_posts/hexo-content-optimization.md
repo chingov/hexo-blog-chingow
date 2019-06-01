@@ -9,6 +9,8 @@ categories: 博客
 abbrlink: bd723aed
 date: 2019-05-18 16:08:13
 ---
+![Photo in Minghu](https://image.chingow.cn/background/20190602023249_WCjPPL_IMG_7582.jpeg "Photo in Minghu")
+
 
 NexT主题内提供了很多功能来让内容更加丰富，本文介绍了如何开启和定制这些功能，主要包括:
 
@@ -50,7 +52,9 @@ post_meta:
 
 ## 文章字数统计
 
-该功能由 [hexo-symbols-count-time](https://github.com/theme-next/hexo-symbols-count-time) 提供。
+该功能由 [hexo-symbols-count-time](https://github.com/theme-next/hexo-symbols-count-time) 提供，效果如图：
+![文章统计](https://image.chingow.cn/images/20190602020607_IyueIG_Screenshot.jpeg?400x "文章统计")
+
 在根目录下执行如下命令安装相关依赖：
 
 ```
@@ -79,6 +83,8 @@ symbols_count_time:
 ```
 
 ## 文末版权声明
+
+![文末版权声明](https://image.chingow.cn/images/20190602011504_NtvIUD_Screenshot.jpeg?800x "文末版权声明")
 
 在 <span id="inline-purple">主题配置文件</span> _config.yml 中开启文章底部的版权声明，版权声明默认使用 [CC BY-NC-SA 4.0](https://creativecommons.org/licenses/by-nc-sa/4.0/) 许可协议，用户可以根据自身需要修改 `licence` 字段变更协议：
 
@@ -225,7 +231,9 @@ a, span.exturl {
 
 ## 底部标签添加图标
 
-默认情况下标签前缀是 `#` 字符，用户可以通过修改主题源码将标签的字符前缀改为图标前缀。
+默认情况下标签前缀是 `#` 字符，可以通过修改主题源码将标签的字符前缀改为图标前缀，效果如图：
+
+![底部标签](https://image.chingow.cn/images/20190602012005_lHglf5_Screenshot.jpeg?140x "底部标签")
 
 在文章布局模板中找到文末标签相关代码段，将 `#` 换成 `<i class="fa fa-tags"></i>` 即可：
 
@@ -247,7 +255,106 @@ NexT中使用 [FontAwesome](https://fontawesome.com/v4.7.0/icons/) 作为图标�
 
 ## 图片尺寸处理
 
-有时候原始图片的尺寸很突兀，但是在 **Hexo** 中使用 **Markdown** 原生的插入图片语法没办法设置图片大小，这一点让人很困扰。
+有时候原始图片的尺寸不太合适，想指定图片在文章中的大小，但是 **Markdown** 原生的图片语法在**Hexo**中是无效的，这一点让人很困扰（可能是Hexo的Bug，希望以后的版本能够解决这个问题）。
+现行的处理办法主要有两种方案，一种是使用html标签
+
+``` html
+<img width=200 src="/image/test.jpg" >
+```
+
+另一种是 [hexo官方文档](https://hexo.io/zh-cn/docs/tag-plugins.html) 推荐的方式
+
+``` html
+{% img [class names] /path/to/image [width] [height] [title text [alt text]] %}
+```
+
+但是习惯了 Markdown 的原生语法之后还是觉得这两种都不够简洁高效，用起来多有不便。参照 `bobcn`的[方案](https://github.com/bobcn/hexo_resize_image.js)，对 Next 主题进行了加强，变相扩展支持了 Markdown 的插图语法：
+
+- 可指定像素
+
+   + 在 URL 后面添加 `?<width>x<height>`
+
+   ```markdown
+   ![指定像素](/image/test.jpg?200x200)
+   ```
+
+   + 可以只指定一个参数，图片会等比例缩放。
+
+   ```markdown
+   ![仅指定width](/image/test.jpg?200x)
+   ![仅指定height](/image/test.jpg?x200)
+   ```
+
+- 可指定缩放比例
+
+   方法是在 URL 后面添加 `?<scale>`，等比例缩放图片大小至 %。
+
+   ```markdown
+   ![指定比例](/image/test.jpg?40)
+   ```
+
+如何实现这种效果的呢？首先在自定义脚本目录新建用于处理图片尺寸的 **JavaScript** 脚本
+
+``` js themes/next/source/js/_custom/hexo_resize_image.js
+function set_image_size(image, width, height) 
+{
+    image.setAttribute("width", width + "px");
+    image.setAttribute("height", height + "px");
+}
+
+function hexo_resize_image()
+{
+    var imgs = document.getElementsByTagName('img');
+    for (var i = imgs.length - 1; i >= 0; i--) 
+    {
+        var img = imgs[i];
+        var src = img.getAttribute('src').toString();
+        var fields = src.match(/\?(\d*x\d*)/);
+        if (fields && fields.length > 1)
+        {
+            var values = fields[1].split("x");
+            if (values.length == 2)
+            {
+                var width = values[0];
+                var height = values[1];
+
+                if (!(width.length && height.length))
+                {
+                    var n_width = img.naturalWidth;
+                    var n_height = img.naturalHeight;
+                    if (width.length > 0)
+                    {
+                        height = n_height*width/n_width;
+                    }
+                    if (height.length > 0)
+                    {
+                        width = n_width*height/n_height;
+                    }
+                }
+                set_image_size(img, width, height);
+            }
+            continue;
+        }
+
+        fields = src.match(/\?(\d*)/);
+        if (fields && fields.length > 1)
+        {
+            var scale = parseFloat(fields[1].toString());
+            var width = scale/100.0*img.naturalWidth;
+            var height = scale/100.0*img.naturalHeight;
+            set_image_size(img, width, height);
+        }
+    }
+}
+window.onload = hexo_resize_image;
+
+```
+
+然后在自定义布局文件最后添加 **JavaScript** 声明
+
+``` html  themes/next/layout/css/_custom/custom.swig
+<script type="text/javascript" src="/js/custom/hexo_resize_image.js"></script>
+```
 
 
 ## 代码复制

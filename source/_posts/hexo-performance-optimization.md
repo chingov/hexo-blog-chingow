@@ -10,6 +10,7 @@ categories: 博客
 abbrlink: e824570
 date: 2019-05-20 17:15:23
 ---
+![Hexo](https://image.chingow.cn/background/006tNc79gy1g37jxk0kq5j327a0ki0th.jpg "Hexo")
 
 在访问很多博客的时候，页面加载和响应速度往往都要上十秒，严重影响用户的体验。
 本文将探究如何利用常用的方案来进行性能优化，主要包括:
