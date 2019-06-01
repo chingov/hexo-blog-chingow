@@ -104,7 +104,7 @@ $ hexo s -g -p 80
 ## 安装NexT主题
 
 hexo 安装主题的方式非常简单, 只需几个简单的命令即可。
-将NexT主题文件拷贝至**themes**目录下, 然后修改 <span id="inline-blue">站点配置文件</span> _config.yml 中的 `theme`字段为`next`即可。
+将NexT主题文件拷贝至**themes**目录下，然后修改 <span id="inline-blue">站点配置文件</span> _config.yml 中的 `theme`字段为`next`即可。
 
 cd 到博客的根目录下执行以下命令下载主题文件：
 
