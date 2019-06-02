@@ -11,6 +11,8 @@ comments: false
 你的收获对得起你的付出
 {% endcq %}
 
+![点亮万家灯火](https://image.chingow.cn/background/20190602023249_WCjPPL_IMG_7582.jpeg "点亮万家灯火")
+
 ## 关于我
 
 目前主要使用 **Java** 语言，从事 **Java** 应用开发近6年，略懂一些 Android/JavaScript/Node.js 等其他语言，对开源有浓厚的兴趣。

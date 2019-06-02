@@ -47,7 +47,9 @@ global:
 
 ### 设置三角丝带背景
 
+{% note info %}
 该功能由 Vue 作者 [尤雨溪](http://evanyou.me/) 首创。注意：添加动态背景会极大增加页面内存占用及 CPU 消耗。
+{% endnote %}
 
 首先，在根目录下执行以下命令安装相关依赖：
 
@@ -271,6 +273,10 @@ footer:
 ```
 
 ### 网站的运行时间
+
+{% note info %}
+本章节受 [Yearito's Blog | 站点运行时间统计 ](http://yearito.cn/posts/hexo-advanced-settings.html) 的启发，自行重构了代码逻辑。
+{% endnote %}
 
 接下来我们显示网站的运行时间，在这里我做了一些个性化文案，可供大家参考：
 ![网站建站运行时间](https://image.chingow.cn/images/00c3834a-cf72-22a3-cd7c-6486649fd648.png?400x "网站建站运行时间")

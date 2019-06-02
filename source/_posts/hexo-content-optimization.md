@@ -9,8 +9,6 @@ categories: 博客
 abbrlink: bd723aed
 date: 2019-05-18 16:08:13
 ---
-![Photo in Minghu](https://image.chingow.cn/background/20190602023249_WCjPPL_IMG_7582.jpeg "Photo in Minghu")
-
 
 NexT主题内提供了很多功能来让内容更加丰富，本文介绍了如何开启和定制这些功能，主要包括:
 
@@ -53,7 +51,7 @@ post_meta:
 ## 文章字数统计
 
 该功能由 [hexo-symbols-count-time](https://github.com/theme-next/hexo-symbols-count-time) 提供，效果如图：
-![文章统计](https://image.chingow.cn/images/20190602020607_IyueIG_Screenshot.jpeg?400x "文章统计")
+![文章统计](https://image.chingow.cn/images/20190602020607_IyueIG_Screenshot.jpeg?420x "文章统计")
 
 在根目录下执行如下命令安装相关依赖：
 
@@ -84,7 +82,8 @@ symbols_count_time:
 
 ## 文末版权声明
 
-![文末版权声明](https://image.chingow.cn/images/20190602011504_NtvIUD_Screenshot.jpeg?800x "文末版权声明")
+NexT主题已经内置了版权声明功能，只需开启配置即可，效果如下：
+![文末版权声明](https://image.chingow.cn/images/20190602011504_NtvIUD_Screenshot.jpeg?600x "文末版权声明")
 
 在 <span id="inline-purple">主题配置文件</span> _config.yml 中开启文章底部的版权声明，版权声明默认使用 [CC BY-NC-SA 4.0](https://creativecommons.org/licenses/by-nc-sa/4.0/) 许可协议，用户可以根据自身需要修改 `licence` 字段变更协议：
 
@@ -255,6 +254,10 @@ NexT中使用 [FontAwesome](https://fontawesome.com/v4.7.0/icons/) 作为图标�
 
 ## 图片尺寸处理
 
+{% note info %}
+本章节受 bobcn 的[方案](https://github.com/bobcn/hexo_resize_image.js)，自行重构了代码逻辑。
+{% endnote %}
+
 有时候原始图片的尺寸不太合适，想指定图片在文章中的大小，但是 **Markdown** 原生的图片语法在**Hexo**中是无效的，这一点让人很困扰（可能是Hexo的Bug，希望以后的版本能够解决这个问题）。
 现行的处理办法主要有两种方案，一种是使用html标签
 
@@ -268,26 +271,19 @@ NexT中使用 [FontAwesome](https://fontawesome.com/v4.7.0/icons/) 作为图标�
 {% img [class names] /path/to/image [width] [height] [title text [alt text]] %}
 ```
 
-但是习惯了 Markdown 的原生语法之后还是觉得这两种都不够简洁高效，用起来多有不便。参照 `bobcn`的[方案](https://github.com/bobcn/hexo_resize_image.js)，对 Next 主题进行了加强，变相扩展支持了 Markdown 的插图语法：
+但是习惯了 Markdown 的原生语法之后还是觉得这两种都不够简洁高效，用起来多有不便。于是尝试对 Next 主题进行了加强，变相扩展支持了 Markdown 的插图语法：
 
 - 可指定像素
-
-   + 在 URL 后面添加 `?<width>x<height>`
+  方法是在 URL 后面添加 `?<width>x<height>`，也可以只指定一个参数，图片会等比例缩放。
 
    ```markdown
    ![指定像素](/image/test.jpg?200x200)
-   ```
-
-   + 可以只指定一个参数，图片会等比例缩放。
-
-   ```markdown
    ![仅指定width](/image/test.jpg?200x)
    ![仅指定height](/image/test.jpg?x200)
    ```
 
 - 可指定缩放比例
-
-   方法是在 URL 后面添加 `?<scale>`，等比例缩放图片大小至 %。
+  方法是在 URL 后面添加 `?<scale>`，等比例缩放图片大小至 %。
 
    ```markdown
    ![指定比例](/image/test.jpg?40)
@@ -356,8 +352,10 @@ window.onload = hexo_resize_image;
 <script type="text/javascript" src="/js/custom/hexo_resize_image.js"></script>
 ```
 
-
 ## 代码复制
+
+NexT主题已经内置了代码复制功能，只需开启配置即可，效果如下：
+![代码复制](https://image.chingow.cn/images/20190602170547_O2y1Oe_Screenshot.jpeg "代码复制")
 
 在 <span id="inline-purple">主题配置文件</span> _config.yml 中开启代码复制功能：
 
@@ -367,28 +365,38 @@ copy_button:
   show_result: true  # 显示复制结果
 ```
 
+搜索的按钮有点移位，在自定义样式文件中调整样式：
+
+``` css themes\next\source\css\_custom\custom.styl
+// 复制按钮样式top调整
+.highlight-wrap .copy-btn {
+  padding: 1px 6px;
+  top: 3px;
+}
+```
+
 ## 代码块显示和隐藏
 
 --- 待完成 ---
 
 ## 草稿和发布
 
-一般我们都会使用` hexo new <title> `来建立文章，这种建立方法会将新文章建立在 source/_posts 目录下，当使用 hexo generate 编译文件时，会将其 HTML 结果编译在 public 目录下，之后` hexo server `将会把 public 目录下所有文章发布。
+<p id="div-border-left-blue">一般我们使用` hexo new <title> `来建立文章，这种建立方法会将新文章建立在 **source/_posts** 目录下，当使用 hexo generate 编译文件时，会将其 HTML 结果编译在 public 目录下，之后` hexo server `将会把 public 目录下所有文章发布。</p>
 
-**这种建立文章方式是有缺点的**
-写文章的人都知道，一篇文章从创作到发布需要经过多次润色，若我们的文章还在创作润色中，尚未编辑完成，执行` hexo server` 时也会随着一起发布，这样对读者是不友好的。
-
-Hexo 另外提供 draft 机制，它的原理是新文章将建立在 source/_drafts 目录下，因此并不会将其编译到 public 目录下发布，而且提供了很友好的预览功能。
+{% note danger %}
+这种建立文章方式是有缺点的！写文章的人都知道，一篇文章从创作到发布需要经过多次润色，若我们的文章还在创作润色中，尚未编辑完成，执行 **hexo server** 时也会随着一起发布，这样对读者是不友好的。
+{% endnote %}
+Hexo 另外提供 draft 机制，它的原理是新文章将建立在 **source/_drafts** 目录下，因此并不会将其编译到 public 目录下发布，而且提供了很友好的预览功能。
 
 ``` bash
 $ hexo new draft <title>	# 新建草稿文章
-$ hexo s --draft	# 预览草稿文章
+$ hexo s --draft	        # 预览草稿文章
 ```
 
 将草稿发布为正式文章：
 
 ``` bash
-$ hexo P <filename>	
+$ hexo P <filename>
 ```
 
 其中 `<filename>` 为不包含 md 后缀的文章名称。它的原理只是将文章从 source/_drafts 移动到 source/_posts 而已。

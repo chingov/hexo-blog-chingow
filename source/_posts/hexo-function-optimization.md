@@ -61,7 +61,7 @@ date: 2019-05-19 22:08:03
 
 ## 在线联系插件DaoVoice
 
-该功能有 [DaoVoice](http://dashboard.daovoice.io) 插件提供，效果如图：
+该功能由 [DaoVoice](http://dashboard.daovoice.io) 插件提供，效果如图：
 ![DaoVoice](https://image.chingow.cn/images/20190602013155_1T1X07_Screenshot.jpeg?350x"DaoVoice")
 
 首先去 [DaoVoice官网](http://dashboard.daovoice.io/get-started?invite_code=3d64b7fd) 注册，输入邀请码 3d64b7fd，注册后查看**app_id** 并复制，在 <span id="inline-purple">主题配置文件</span> _config.yml 中添加daovoice的配置：
@@ -72,7 +72,7 @@ daovoice: true
 daovoice_app_id: {your app_id}
 ```
 
-按照**应用设置**—>**安装到网站**的设置，在head的布局模板中插入相关 JavaScript 代码：
+按照官网开发文档说明里 **应用设置**—>**安装到网站**的设置，在head的布局模板中插入相关 JavaScript 代码：
 
 ``` diff themes/next/layout/_partials/head.swig
 +{% if theme.daovoice %}
@@ -249,7 +249,7 @@ fancybox: true
 
 ## 结束语
 
-按照 [yearito](yearito.cn) 的优化精髓，在集成第三方插件或者自定义新功能的过程中尽量做到：
+文章中大量的优化方案都参照了 [yearito](yearito.cn) 的优化精髓，在集成第三方插件或者自定义新功能的过程中尽量做到：
 
 + 可以在站点配置 / 主题配置文件中方便快捷的开启 / 关闭插件服务
 + 可以在语言包 zh-CN.yml 中快速修改页面中的自定义文案，而不是在代码中将文字表述写死
