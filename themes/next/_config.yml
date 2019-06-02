@@ -1033,7 +1033,7 @@ canvas_sphere: false
 # alpha: The transparency of the ribbon.
 # zIndex: The display level of the ribbon.
 canvas_ribbon: # 开启随机三角丝带背景
-  enable: true
+  enable: false
   size: 90
   alpha: 0.6
   zIndex: -1
