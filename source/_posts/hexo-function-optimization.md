@@ -21,11 +21,11 @@ date: 2019-05-19 22:08:03
 + 图片灯箱
 <!--more-->
 
-## 分类添加时间线
+## 分类时间线
 
 归档页面的时间线会让文章显示得很有条理，但是分类里却没有，可以通过修改布局自己实现这个时间线功能。
 
-![分类时间线](https://image.chingow.cn/images/20190602012728_SmUFAI_Screenshot?600x.jpeg"分类时间线")
+![分类时间线](https://image.chingow.cn/images/20190602012728_SmUFAI_Screenshot?600x.jpeg "分类时间线")
 
 在主题的分类布局文件中添加以下代码：
 
@@ -59,10 +59,10 @@ date: 2019-05-19 22:08:03
 +{% endblock %}
 ```
 
-## 在线联系插件DaoVoice
+## 在线联系DaoVoice
 
 该功能由 [DaoVoice](http://dashboard.daovoice.io) 插件提供，效果如图：
-![DaoVoice](https://image.chingow.cn/images/20190602013155_1T1X07_Screenshot.jpeg?350x"DaoVoice")
+![DaoVoice](https://image.chingow.cn/images/20190603010423_YeqmzM_Screenshot.jpeg "DaoVoice")
 
 首先去 [DaoVoice官网](http://dashboard.daovoice.io/get-started?invite_code=3d64b7fd) 注册，输入邀请码 3d64b7fd，注册后查看**app_id** 并复制，在 <span id="inline-purple">主题配置文件</span> _config.yml 中添加daovoice的配置：
 
@@ -123,7 +123,7 @@ local_search:
 }
 ```
 
-## 相关文章推荐
+## 文章推荐
 
 该功能由 [hexo-related-popular-posts](https://github.com/tea3/hexo-related-popular-posts) 插件提供，效果如图：
 
@@ -229,7 +229,7 @@ comments: false
 ---
 ```
 
-## 添加图片灯箱
+## 图片灯箱
 
 添加灯箱功能，实现点击图片后放大聚焦图片，并支持幻灯片播放、全屏播放、缩略图、快速分享到社交媒体等，该功能由 [fancyBox](https://github.com/fancyapps/fancybox) 提供。
 

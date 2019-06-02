@@ -279,7 +279,7 @@ footer:
 {% endnote %}
 
 接下来我们显示网站的运行时间，在这里我做了一些个性化文案，可供大家参考：
-![网站建站运行时间](https://image.chingow.cn/images/00c3834a-cf72-22a3-cd7c-6486649fd648.png?400x "网站建站运行时间")
+![网站建站运行时间](https://image.chingow.cn/images/00c3834a-cf72-22a3-cd7c-6486649fd648.png?550x "网站建站运行时间")
 
 在 <span id="inline-purple">主题配置文件</span> _config.yml 中的添加 `ages`配置：
 
@@ -330,7 +330,7 @@ footer:
 ### 添加访客统计
 
 该功能由 [不蒜子](http://ibruce.info/2015/04/04/busuanzi/) 提供。UV：独立访客数，PV：网站浏览量，访客数和浏览量的区别在于一个用户连续点击n篇文章，会记录n次浏览量，但只记录一次访客数，效果如图：
-![网站访客统计](https://image.chingow.cn/images/0298aada-faa2-1f09-f68a-e0382168a5ed.png?400x "网站访客统计")
+![网站访客统计](https://image.chingow.cn/images/0298aada-faa2-1f09-f68a-e0382168a5ed.png?550x "网站访客统计")
 
 {% note info %}
 由于不蒜子是基于域名来进行统计计算的，所以通过 localhost:4000 端口访问的时候统计数据UV和PV都会异常的大，属于正常现象。
