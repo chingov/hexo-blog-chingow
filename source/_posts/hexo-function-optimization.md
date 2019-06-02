@@ -25,7 +25,7 @@ date: 2019-05-19 22:08:03
 
 归档页面的时间线会让文章显示得很有条理，但是分类里却没有，可以通过修改布局自己实现这个时间线功能。
 
-![分类时间线](https://image.chingow.cn/images/20190602012728_SmUFAI_Screenshot?600x.jpeg "分类时间线")
+![分类时间线](https://image.chingow.cn/images/20190602012728_SmUFAI_Screenshot.jpeg?600x "分类时间线")
 
 在主题的分类布局文件中添加以下代码：
 
