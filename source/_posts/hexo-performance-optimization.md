@@ -42,7 +42,9 @@ date: 2019-05-20 17:15:23
 
 ### Nginx压缩、缓存
 
-Nginx 是一个高性能的 Web 服务器，合理配置可以有效提高网站的响应速度。
+{% note info %}
+Nginx 是一个高性能的 Web 服务器，可以适当地分配流量（负载均衡器）、流媒体、动态调整图像大小、缓存内容等等，合理配置可以有效提高网站的响应速度。
+{% endnote %}
 
 #### 开启gzip
 
@@ -121,7 +123,6 @@ location ~* ^.+\.(html|htm)$ {
 | 腾讯云COS | 50G	| 无 | 无 | 6个月 | <i class="fa fa-check"/> | <i class="fa fa-check"/> |
 | Github |100G | 无限 | 无限 | 永久 |<i class="fa fa-check"/> | <i class="fa fa-close"/> |
 
-
 - 七牛云是专业云服务商，提供比较完备的服务，且免费额度足够个人博客使用。
 - 七牛云的定位就是 CDN，让你在浏览网页的时候最快的接收到页面中的图片、音频等文件，所以非常适合个人、企业用户用来储存站点资源，且CDN加速也不会产生太多的费用。
 - 微博图床是匿名图床，如果有一天禁止外链访问的话，图片将全部丢失。想着辛辛苦苦制作的图片有丢失的风险，马上就放弃了。【2019年4月微博图床开启了防盗链，对图片 CDN 添加了引用来源`Referer`检测，对于非微博站内引用的请求统统拒绝访问】
@@ -159,12 +160,22 @@ location ~* ^.+\.(html|htm)$ {
 如果每次都需要在web端点击上传图片，然后复制外链的操作就比较麻烦了，使用工具可以让我们更加方便地上传资源。
 Mac平台上有多款图床工具，找到了几个优秀的工具，做了个对比：
 
+<style>
+table th:nth-of-type(2){
+width: 10%;;
+}
+table th:nth-of-type(5){
+width: 15%;
+}
+
+</style>
+
 | 名称 | 收费标准 | 优点 | 缺点 | 推荐指数 | 下载链接 |
 | :---: | :---: | :-------: | :-------: |:-----: | :----: |
-| ipic | 60元/年	| 支持多种云服务，压缩上传，拖拽上传等，功能强大 | 免费版只支持微博图床 | <i class="fa fa-star"/> | [mac app store](https://itunes.apple.com/cn/app/ipic-markdown-%E5%9B%BE%E5%BA%8A-%E6%96%87%E4%BB%B6%E4%B8%8A%E4%BC%A0%E5%B7%A5%E5%85%B7/id1101244278?mt=12) |
-| PicGo | 免费 | 支持链接上传，支持相册管理 | 不支持清除上传历史 | <i class="fa fa-star"/> <i class="fa fa-star"/> <i class="fa fa-star-half-o"/> | [PicGo.dmg](https://github.com/Molunerfinn/PicGo/releases)|
-| PicUploader | 免费 | 支持压缩后上传，多文件、文件夹同时上传 | 不支持顶部菜单 | <i class="fa fa-star"/> <i class="fa fa-star"/> | [PicUploader.zip](https://github.com/xiebruce/PicUploader/releases) |
-| 云存储管理 | 免费 | 支持相册管理，可视化 | 上传速度太慢，会卡死（不能忍受(°⌓°;） | <i class="fa fa-star"/> <i class="fa fa-star"/> <i class="fa fa-star"/> | [云存储管理客户端](https://github.com/willnewii/qiniuClient) |
-| cuImage | 免费 | 剪贴板上传，压缩上传，拖拽上传，与ipic类似 | 仅支持七牛云<br/>不支持链接上传 | <i class="fa fa-star"/> <i class="fa fa-star"/> <i class="fa fa-star"/> <i class="fa fa-star"/> <i class="fa fa-star-half-o"/> | [mac app store](https://github.com/hulizhen/cuImage/releases) |
+| ipic | 60元/年	| 剪贴板、压缩、拖拽上传，功能强大，支持多种云服务 | 免费版只支持微博图床 |  <i class="fa fa-star"/>  | [Mac App Store](https://itunes.apple.com/cn/app/ipic-markdown-%E5%9B%BE%E5%BA%8A-%E6%96%87%E4%BB%B6%E4%B8%8A%E4%BC%A0%E5%B7%A5%E5%85%B7/id1101244278?mt=12) |
+| PicGo | 免费 | 链接上传，支持相册管理 | 不支持清除上传历史 | <i class="fa fa-star"/> <i class="fa fa-star"/> <i class="fa fa-star-half-o"/> | [PicGo.dmg](https://github.com/Molunerfinn/PicGo/releases) |
+| PicUploader | 免费 | 压缩上传，多文件、文件夹同时上传 | 不支持顶部菜单 | <i class="fa fa-star"/> <i class="fa fa-star"/> | [PicUploader.zip](https://github.com/xiebruce/PicUploader/releases) |
+| 云存储管理 | 免费 | 链接上传，可视化相册管理 | 上传速度太慢，会卡死（不能忍受(°⌓°;） | <i class="fa fa-star"/> <i class="fa fa-star"/> <i class="fa fa-star"/> | [云存储管理客户端](https://github.com/willnewii/qiniuClient) |
+| cuImage | 免费 | 剪贴板、压缩、拖拽上传，与ipic类似 | 仅支持七牛云<br/>不支持链接上传 | <i class="fa fa-star"/> <i class="fa fa-star"/> <i class="fa fa-star"/> <i class="fa fa-star"/>  <i class="fa fa-star-half-o"/> | [Mac App Store](https://github.com/hulizhen/cuImage/releases) |
 
-在这里我推荐使用cuImage，使用这个工具可以直接将图片拖进去就可以使用外链连接了，操作十分简便。
+如果是使用七牛云图床我推荐cuImage，它的功能完善，使用剪贴板、拖曳、甚至是快捷键都可以直接将图片上传到云存储，并直接生成Markdown外链，操作十分简便。
