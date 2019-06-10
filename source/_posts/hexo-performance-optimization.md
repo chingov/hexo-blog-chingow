@@ -10,8 +10,6 @@ categories: 博客
 abbrlink: e824570
 date: 2019-05-20 17:15:23
 ---
-![Hexo](https://image.chingow.cn/background/006tNc79gy1g37jxk0kq5j327a0ki0th.jpg "Hexo")
-
 在访问很多博客的时候，页面加载和响应速度往往都要上十秒，严重影响用户的体验。
 本文将探究如何利用常用的方案来进行性能优化，主要包括:
 
@@ -26,7 +24,7 @@ date: 2019-05-20 17:15:23
 
 ### CDN加速
 
-在阅读下文之前，如果你还不知道 CDN 是什么，请先移步[百度百科：CDN词条](https://baike.baidu.com/item/CDN)进行一些了解。
+在阅读下文之前，如果你还不知道 CDN 是什么，请先移步[百度百科：CDN词条](https://baike.baidu.com/item/CDN) 进行一些了解。
 在所有静态资源中，对加载速度影响较大且存在大幅优化空间的主要还是「JavaScript 第三方库」脚本，设定成合适的 CDN 地址，此特性可以加速静态资源的加载。
 对于我 Hexo 博客来说，NexT 主题已经做好了配置，只需添加 CDN 加载源，将其改为从公共 CDN 加载即可。
 在 <span id="inline-purple">主题配置文件</span> _config.yml 中修改`vendors`：
@@ -98,12 +96,75 @@ location ~* ^.+\.(html|htm)$ {
 }
 ```
 
-### 图床的好处
+### 图床
 
+{% note info %}
+目前各大云服务商都提供了对象存储服务，如七牛云 QINIU、又拍云 USS、腾讯云 COS、阿里云 OSS 等。我们可以使用这些服务器来存储图片信息，并将其称为图床。
+{% endnote %}
+
+使用图床的好处：
 - 可以减轻服务器的存储压力；
 - 减轻应为图片带来的额外的流量消耗；
 - 图床一般都是具有cdn加速的，可以让你的网页变得更快。
-  
+
 我主要是看中了cdn加速这点，这个对网站的性能提升太重要了。
 
---- 待完成 ---
+常用的云存储服务费用对比：
+
+| 限定符 | 免费存储空间 | 免费下载流量 | 免费请求 |免费时间 | HTTPS  | CDN |
+| :---: | :---: | :---: | :-----: |:----: | :--: | :--: |
+| 微博图床 | 无限	| 无限 | 无限 | 永久 |<i class="fa fa-close"/> | <i class="fa fa-check"/>|
+| 七牛云 | 10G	| 10G | PUT: 10万次 <br/>GET: 100万次 | 永久 | <i class="fa fa-check"/> | <i class="fa fa-check"/> |
+| 青云QingStor | 30G	| 11G | PUT: 10万次 <br/>GET: 100万次 | 12个月 |<i class="fa fa-check"/> | <i class="fa fa-check"/> |
+| 又拍云USS | 10G	| 15G | 无限 | 12个月 | <i class="fa fa-check"/> | <i class="fa fa-check"/> |
+| 阿里云OSS | 无	| 无 | 无 | 无 | <i class="fa fa-check"/> | <i class="fa fa-check"/> |
+| 腾讯云COS | 50G	| 无 | 无 | 6个月 | <i class="fa fa-check"/> | <i class="fa fa-check"/> |
+| Github |100G | 无限 | 无限 | 永久 |<i class="fa fa-check"/> | <i class="fa fa-close"/> |
+
+
+- 七牛云是专业云服务商，提供比较完备的服务，且免费额度足够个人博客使用。
+- 七牛云的定位就是 CDN，让你在浏览网页的时候最快的接收到页面中的图片、音频等文件，所以非常适合个人、企业用户用来储存站点资源，且CDN加速也不会产生太多的费用。
+- 微博图床是匿名图床，如果有一天禁止外链访问的话，图片将全部丢失。想着辛辛苦苦制作的图片有丢失的风险，马上就放弃了。【2019年4月微博图床开启了防盗链，对图片 CDN 添加了引用来源`Referer`检测，对于非微博站内引用的请求统统拒绝访问】
+- GitHub 看起来是个不错的选择，但是网络访问速度不是很理想，随即放弃了。
+- 阿里云OSS也是个不错的选择，有个9元包年40G存储空间，无限流量。
+
+### 七牛云
+
+综合比较之后：我选择了七牛云的对象存储作为图床(高效、快速、有保障)。
+![七牛云对象存储](https://image.chingow.cn/images/20190610215145_FVk4s5_Screenshot.jpeg "七牛云对象存储")
+
+#### 注册账号并实名认证 
+注册 [七牛开发者平台](https://portal.qiniu.com/signup?code=1hjtnnywndb9u) 账号，并前往 **个人中心**  ->  **个人信息** 实名认证。
+
+####  新建存储空间
+- 进入控制台，打开 **对象存储**  -> **新建存储空间**， 即可创建新的Bucket。
+【存储区域】：建议选择一个离你较近的CDN
+【访问控制】：这里必须选择“公开空间”，因为设置为私有空间，图片的外链是无法访问的。
+
+- 进入新创建的存储空间，在 **空间概览**里点击 **自定义域名** 为空间绑定融合cdn加速域名。详细的参数解释可以参考 [官方域名接入文档](https://developer.qiniu.com/fusion/manual/4939/the-domain-name-to-access) 。
+![自定义域名](https://image.chingow.cn/images/20190610224405_2DZajr_Screenshot.jpeg "自定义域名")
+【域名类型】：如果没有特殊需求，选择普通域名即可。
+【加速域名】：建议填写的是，您未在使用的二级或三级域名等，请勿轻易绑定www域名避免影响您的源站服务。
+【源站配置】：当您为存储空间绑定自定义域名的时候，源站配置默认为七牛云存储空间即可。
+
+- 配置CNAME
+创建加速域名成功后，七牛云会提供CNAME地址，需要在域名服务提供商处将加速域名指向分配的CNAME地址，配置生效后，即可享受CDN加速服务。根据控制台的引导文档并参考 [官方配置域名CNAME文档](https://developer.qiniu.com/fusion/kb/1322/how-to-configure-cname-domain-name) 。
+
+#### 上传文件
+进入新创建的存储空间，在 **内容管理** 中上传、下载、访问、修改资源，这样就可以使用资源的外链了。
+上传图片文件以后，复制外链连接就可以利用这个链接访问这个图片了。
+![使用资源外链](https://image.chingow.cn/images/20190610224604_5uT2oa_Screenshot.jpeg "使用资源外链")
+
+### 上传工具
+如果每次都需要在web端点击上传图片，然后复制外链的操作就比较麻烦了，使用工具可以让我们更加方便地上传资源。
+Mac平台上有多款图床工具，找到了几个优秀的工具，做了个对比：
+
+| 名称 | 收费标准 | 优点 | 缺点 | 推荐指数 | 下载链接 |
+| :---: | :---: | :-------: | :-------: |:-----: | :----: |
+| ipic | 60元/年	| 支持多种云服务，压缩上传，拖拽上传等，功能强大 | 免费版只支持微博图床 | <i class="fa fa-star"/> | [mac app store](https://itunes.apple.com/cn/app/ipic-markdown-%E5%9B%BE%E5%BA%8A-%E6%96%87%E4%BB%B6%E4%B8%8A%E4%BC%A0%E5%B7%A5%E5%85%B7/id1101244278?mt=12) |
+| PicGo | 免费 | 支持链接上传，支持相册管理 | 不支持清除上传历史 | <i class="fa fa-star"/> <i class="fa fa-star"/> <i class="fa fa-star-half-o"/> | [PicGo.dmg](https://github.com/Molunerfinn/PicGo/releases)|
+| PicUploader | 免费 | 支持压缩后上传，多文件、文件夹同时上传 | 不支持顶部菜单 | <i class="fa fa-star"/> <i class="fa fa-star"/> | [PicUploader.zip](https://github.com/xiebruce/PicUploader/releases) |
+| 云存储管理 | 免费 | 支持相册管理，可视化 | 上传速度太慢，会卡死（不能忍受(°⌓°;） | <i class="fa fa-star"/> <i class="fa fa-star"/> <i class="fa fa-star"/> | [云存储管理客户端](https://github.com/willnewii/qiniuClient) |
+| cuImage | 免费 | 剪贴板上传，压缩上传，拖拽上传，与ipic类似 | 仅支持七牛云<br/>不支持链接上传 | <i class="fa fa-star"/> <i class="fa fa-star"/> <i class="fa fa-star"/> <i class="fa fa-star"/> <i class="fa fa-star-half-o"/> | [mac app store](https://github.com/hulizhen/cuImage/releases) |
+
+在这里我推荐使用cuImage，使用这个工具可以直接将图片拖进去就可以使用外链连接了，操作十分简便。
