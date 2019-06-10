@@ -355,7 +355,7 @@ window.onload = hexo_resize_image;
 ## 代码复制
 
 NexT主题已经内置了代码复制功能，只需开启配置即可，效果如下：
-![代码复制](https://image.chingow.cn/images/20190602170547_O2y1Oe_Screenshot.jpeg "代码复制")
+![代码复制](https://image.chingow.cn/images/20190602170547_O2y1Oe_Screenshot.jpeg?600x "代码复制")
 
 在 <span id="inline-purple">主题配置文件</span> _config.yml 中开启代码复制功能：
 

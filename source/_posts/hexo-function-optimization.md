@@ -25,7 +25,7 @@ date: 2019-05-19 22:08:03
 
 归档页面的时间线会让文章显示得很有条理，但是分类里却没有，可以通过修改布局自己实现这个时间线功能。
 
-![分类时间线](https://image.chingow.cn/images/20190602012728_SmUFAI_Screenshot.jpeg?600x "分类时间线")
+![分类时间线](https://image.chingow.cn/images/20190602012728_SmUFAI_Screenshot.jpeg?400x "分类时间线")
 
 在主题的分类布局文件中添加以下代码：
 
@@ -62,7 +62,7 @@ date: 2019-05-19 22:08:03
 ## 在线联系DaoVoice
 
 该功能由 [DaoVoice](http://dashboard.daovoice.io) 插件提供，效果如图：
-![DaoVoice](https://image.chingow.cn/images/20190603010423_YeqmzM_Screenshot.jpeg "DaoVoice")
+![DaoVoice](https://image.chingow.cn/images/20190603010423_YeqmzM_Screenshot.jpeg?300x "DaoVoice")
 
 首先去 [DaoVoice官网](http://dashboard.daovoice.io/get-started?invite_code=3d64b7fd) 注册，输入邀请码 3d64b7fd，注册后查看**app_id** 并复制，在 <span id="inline-purple">主题配置文件</span> _config.yml 中添加daovoice的配置：
 
@@ -95,7 +95,7 @@ daovoice_app_id: {your app_id}
 
 该功能由 [hexo-generator-searchdb](https://github.com/theme-next/hexo-generator-searchdb) 提供，效果如图：
 
-![站内搜索](https://image.chingow.cn/images/20190602014351_let2yO_Screenshot.jpeg?900x"站内搜索")
+![站内搜索](https://image.chingow.cn/images/20190602014351_let2yO_Screenshot.jpeg?650x "站内搜索")
 
 在根目录下执行以下命令安装相关依赖：
 
@@ -168,7 +168,7 @@ related_posts:
 
 ## Valine评论
 
-![Valine评论](https://image.chingow.cn/images/20190602015658_Y7Rj8t_Screenshot.jpeg?820x"Valine评论")
+![Valine评论](https://image.chingow.cn/images/20190602015658_Y7Rj8t_Screenshot.jpeg?650x"Valine评论")
 
 > Valine 诞生于 2017 年 8 月 7 日，是一款基于 [LeanCloud](https://leancloud.cn) 提供后端数据服务的快速、简洁且高效的无后端评论系统，支持匿名评论、持Markdown、Emoji等都是它的绝对优势，而且 Next 主题也已经内置了 Valine 组件，使用起来非常方便。
 
