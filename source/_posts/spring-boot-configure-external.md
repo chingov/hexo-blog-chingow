@@ -5,6 +5,7 @@ related_posts: true
 tags:
   - SpringBoot
   - Spring
+  - property
 categories: Spring Boot
 abbrlink: ad708d57
 date: 2019-06-12 18:44:33
