@@ -21,7 +21,7 @@ comments: false
 
 ***建站初衷***：本站是我的个人博客网站，建立本站的初衷是为了记录整理和分享技术心得，锻炼自己的写作表达能力，同时渴望认识更多开源世界志同道合的朋友。
 
-***本站概况***：本站采用[Hexo](https://hexo.io/zh-cn/index.html)博客框架搭建，使用[NexT](https://github.com/theme-next/hexo-theme-next)主题，发布在阿里云ESC云服务器，图片和CDN加速使用了七牛云对象存储（[实现过程参考链接](http://www.chingow.cn/posts/e824570.html)），于2019年4月正式运行。
+***本站概况***：本站采用[Hexo](https://hexo.io/zh-cn/index.html)博客框架搭建，使用[NexT](https://github.com/theme-next/hexo-theme-next)主题，发布在阿里云ESC云服务器，图片和CDN加速使用了七牛云对象存储（[实现过程参考链接](https://www.chingow.cn/posts/e824570.html)），于2019年4月正式运行。
 
 ## 个人生涯
 
