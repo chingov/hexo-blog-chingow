@@ -5,6 +5,7 @@ related_posts: true
 tags:
   - Hexo
   - NexT
+  - 阿里云
   - 七牛云
 categories: 博客
 abbrlink: e824570
@@ -39,6 +40,28 @@ date: 2019-05-20 17:15:23
 ```
 
 比较常用的开源项目 CDN 服务商主要有 unpkg、bootcdn、 cdnjs、jsdelivr 和 cloudflare，本站主要使用 jsdelivr 提供的 CDN 加速服务。
+
+### 上云
+
+{% note info %}
+国内的 CDN服务 要求网站必须备案，但是有些服务商是不支持备案的，于是云主机就是我们需要的了，可以一键备案直接上云。
+{% endnote %}
+
+研究了一下各个云服务的价格，1核1G的云主机一年大概都是500+，不过近期阿里云和腾讯云针对新用户都有很给力的活动：
+
+| 服务商 | 配置 | 时限 | 价格（元） |
+| :---: | :---: | :-------: | :-------: |
+| [阿里云](https://www.aliyun.com/1111/2019/group-buying-share?ptCode=0DB71CCB9AC09C95A317ACF8723EE019647C88CF896EF535&userCode=wdpvvh4p&share_source=copy_link) | 1核2G内存1M带宽 | 一年 | 86 |
+|  | 1核1G内存1M带宽（香港）| 一年 | 119 |
+|  | 1核2G内存1M带宽 | 三年 | 229 |
+|  | 2核4G内存5M带宽 | 三年 | 799 |
+| [腾讯云](https://cloud.tencent.com/act/double11) |     1核2G内存1M带宽     | 一年 |     88     |
+|  | 1核1G内存1M带宽（香港） | 一年 |    168     |
+|  | 1核2G内存1M带宽（香港） | 一年 |    288     |
+|  | 1核1G内存1M带宽（香港） | 三年 |    428     |
+
+看起来的话 [阿里云1核2G的云主机](https://www.aliyun.com/1111/2019/group-buying-share?ptCode=0DB71CCB9AC09C95A317ACF8723EE019647C88CF896EF535&userCode=wdpvvh4p&share_source=copy_link) 一年只要86，三年只要229 ，简直太白菜价了。推荐大家一次买3年的，后面自己学习其他技术会便利很多。
+Tips：香港的主机可以访问墙外的网络，但是需要正规建站用途。
 
 ### Nginx压缩、缓存
 
