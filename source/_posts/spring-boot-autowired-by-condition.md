@@ -1,5 +1,5 @@
 ---
-title: Spring Boot - 根据配置动态注入Bean
+title: Spring Boot - 条件化注解Conditional
 copyright: true
 related_posts: true
 categories: Spring Boot
