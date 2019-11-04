@@ -64,7 +64,9 @@ date: 2019-05-20 17:15:23
 |  | 双11 | 1核1G内存1M带宽（香港）| 三年 | 428 |
 
 看起来的话 [阿里云1核2G的云主机](https://www.aliyun.com/1111/2019/group-buying-share?ptCode=0DB71CCB9AC09C95A317ACF8723EE019647C88CF896EF535&userCode=wdpvvh4p&share_source=copy_link) 一年只要86，三年只要229 ，简直太白菜价了。推荐大家一次买3年的，后面自己学习其他技术会便利很多。
-Tips：香港的主机可以访问墙外的网络，但是需要正规建站用途。
+Tips：香港主机的优势在于无需备案，且可以访问墙外的网络，要注意正规建站用途。
+
+![阿里云双十一拼团购](https://image.chingow.cn/images/20191105003457_6qRaph_IMG_3394.jpeg "阿里云双十一拼团购")
 
 ### Nginx压缩、缓存
 
