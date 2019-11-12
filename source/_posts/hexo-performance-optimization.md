@@ -49,24 +49,15 @@ date: 2019-05-20 17:15:23
 
 研究了一下各个云服务的价格，1核1G的云主机一年大概都是500+，不过近期阿里云和腾讯云针对新用户都有很给力的活动：
 
-| 服务商 | 活动 | 配置 | 时限 | 价格（元） |
+| 服务商 | 产品名称 | 配置 | 时长 | 原价 | 现价 | 折扣 |
 | :---: | :---: | :-------------: | :---: | :----: |
-| [阿里云](https://www.aliyun.com/1111/2019/group-buying-share?ptCode=0DB71CCB9AC09C95A317ACF8723EE019647C88CF896EF535&userCode=wdpvvh4p&share_source=copy_link) | 双11 | 1核2G内存1M带宽 | 一年 | 86 |
-|  | 双11 | 1核1G内存1M带宽（香港）| 一年 | 119 |
-|  | 双11| 1核2G内存1M带宽 | 三年 | 229 |
-|  | 双11| 2核4G内存3M带宽 | 三年 | 799 |
-| [阿里云](https://www.aliyun.com/acts/hi-group-buying-share?ptCode=0DB71CCB9AC09C95A317ACF8723EE01989B9F59A2D8E8A59&userCode=wdpvvh4p&activityId=3&share_source=copy_link) | 长期 | 2核1G内存1M带宽 | 一年 | 99 |
-|  | 长期 | 1核2G内存1M带宽（香港）| 三年 | 719 |
-| [腾讯云](https://cloud.tencent.com/act/double11) | 双11 | 1核2G内存1M带宽 | 一年 |  88 |
-|  | 双11 | 1核2G内存1M带宽 | 三年 | 268 |
-|  | 双11 | 2核4G内存3M带宽 | 三年 | 688 |
-|  | 双11 | 1核2G内存1M带宽（香港）| 一年 | 288 |
-|  | 双11 | 1核1G内存1M带宽（香港）| 三年 | 428 |
+| [阿里云](https://www.aliyun.com/acts/hi-group-buying-share?ptCode=0DB71CCB9AC09C95A317ACF8723EE01989B9F59A2D8E8A59&userCode=wdpvvh4p&activityId=3&share_source=copy_link) | t6 10%性能基线 | 2核1G内存1M带宽 | 一年 | 648 | 99 | 15% |
+|  | t6 20%性能基线 | 2核4G内存5M带宽 | 一年 | 2484 | 662 | 26% |
+|  | t5 10%性能基线 | 1核2G内存1M带宽（香港）| 三年 | 5068.8 | 719 | 14% |
 
-看起来的话 [阿里云1核2G的云主机](https://www.aliyun.com/1111/2019/group-buying-share?ptCode=0DB71CCB9AC09C95A317ACF8723EE019647C88CF896EF535&userCode=wdpvvh4p&share_source=copy_link) 一年只要86，三年只要229 ，简直太白菜价了。推荐大家一次买3年的，后面自己学习其他技术会便利很多。
+看起来的话 [阿里云2核1G的云主机](https://www.aliyun.com/acts/hi-group-buying-share?ptCode=0DB71CCB9AC09C95A317ACF8723EE01989B9F59A2D8E8A59&userCode=wdpvvh4p&activityId=3&share_source=copy_link) 一年只要99 ，简直太白菜价了。
+
 Tips：香港主机的优势在于无需备案，且可以访问墙外的网络，要注意正规建站用途。
-
-![阿里云双十一拼团购](https://image.chingow.cn/images/20191105003457_6qRaph_IMG_3394.jpeg "阿里云双十一拼团购")
 
 ### Nginx压缩、缓存
 
