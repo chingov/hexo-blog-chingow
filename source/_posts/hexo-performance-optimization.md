@@ -51,9 +51,10 @@ date: 2019-05-20 17:15:23
 
 | 服务商 | 产品名称 | 配置 | 时长 | 原价 | 现价 | 折扣 |
 | :---: | :---: | :-------------: | :---: | :----: |
-| [阿里云](https://www.aliyun.com/acts/hi-group-buying-share?ptCode=0DB71CCB9AC09C95A317ACF8723EE01989B9F59A2D8E8A59&userCode=wdpvvh4p&activityId=3&share_source=copy_link) | t6 10%性能基线 | 2核1G内存1M带宽 | 一年 | 648 | 99 | 15% |
-|  | t6 20%性能基线 | 2核4G内存5M带宽 | 一年 | 2484 | 662 | 26% |
-|  | t5 10%性能基线 | 1核2G内存1M带宽（香港）| 三年 | 5068.8 | 719 | 14% |
+| [阿里云](https://www.aliyun.com/acts/hi-group-buying-share?ptCode=0DB71CCB9AC09C95A317ACF8723EE01989B9F59A2D8E8A59&userCode=wdpvvh4p&activityId=3&share_source=copy_link) | ECS T6 | 2核1G内存1M带宽 | 一年 | 648 | 99 | 15% |
+|  | ECS T6  | 2核2G内存2M带宽 | 一年 | 1288 | 228 | 18% |
+|  | ECS T6 | 2核2G内存2M带宽 | 三年 | 3858 | 614 | 16% |
+|  | ECS T5 | 1核2G内存1M带宽（香港）| 三年 | 5068 | 719 | 14% |
 
 看起来的话 [阿里云2核1G的云主机](https://www.aliyun.com/acts/hi-group-buying-share?ptCode=0DB71CCB9AC09C95A317ACF8723EE01989B9F59A2D8E8A59&userCode=wdpvvh4p&activityId=3&share_source=copy_link) 一年只要99 ，简直太白菜价了。
 
