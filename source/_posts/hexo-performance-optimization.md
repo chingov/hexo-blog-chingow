@@ -59,7 +59,6 @@ date: 2019-05-20 17:15:23
 |  | t5 +10%性能 | 1核2G内存1M带宽（香港）| 三年 | 5068.8 | 719 | 14% |
 |  | t6 +10%性能 | 2核1G内存1M带宽 | 一年 | 648 | 99 | 15% |
 
-
 看起来的话 [阿里云1核2G的云主机](https://www.aliyun.com/acts/hi-group-buying-share?ptCode=0DB71CCB9AC09C95A317ACF8723EE01989B9F59A2D8E8A59&userCode=wdpvvh4p&activityId=3&share_source=copy_link) 一年只要79 ，比双十一大促还便宜，简直太白菜价了。建议一次性买三年的，新用户优惠可是只有这一次。
 
 Tips：香港主机的优势在于无需备案，且可以访问墙外的网络，要注意正规建站用途。
