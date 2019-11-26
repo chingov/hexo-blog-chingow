@@ -47,15 +47,20 @@ date: 2019-05-20 17:15:23
 国内的 CDN服务 要求网站必须备案，但是有些服务商是不支持备案的，于是云主机就是我们需要的了，可以一键备案直接上云。
 {% endnote %}
 
-研究了一下各个云服务的价格，1核1G的云主机一年大概都是500+，不过近期阿里云和腾讯云针对新用户都有很给力的活动：
+研究了一下各个云服务的价格，1核1G的云主机一年大概都是500+，不过阿里云针对新用户都有很给力的活动：
 
 | 服务商 | 产品名称 | 配置 | 时长 | 原价 | 现价 | 折扣 |
 | :---: | :---: | :-------------: | :---: | :----: |
-| [阿里云](https://www.aliyun.com/acts/hi-group-buying-share?ptCode=0DB71CCB9AC09C95A317ACF8723EE01989B9F59A2D8E8A59&userCode=wdpvvh4p&activityId=3&share_source=copy_link) | t6 10%性能基线 | 2核1G内存1M带宽 | 一年 | 648 | 99 | 15% |
-|  | t6 20%性能基线 | 2核4G内存5M带宽 | 一年 | 2484 | 662 | 26% |
-|  | t5 10%性能基线 | 1核2G内存1M带宽（香港）| 三年 | 5068.8 | 719 | 14% |
+| [阿里云](https://www.aliyun.com/acts/hi-group-buying-share?ptCode=0DB71CCB9AC09C95A317ACF8723EE01989B9F59A2D8E8A59&userCode=wdpvvh4p&activityId=3&share_source=copy_link) | n4 100%CPU性能 | 2核4G内存3M带宽 | 一年 | 3382.8 | 349 | 10% |
+|  | n4 100%性能 | 2核4G内存3M带宽 | 两年 | 6765.6 | 469 | 7% |
+|  | n4 100%性能 | 2核4G内存3M带宽 | 三年 | 10148.4 | 669 | 7% |
+|  | t5 +20%性能 | 1核2G内存1M带宽 | 一年 | 992.4 | 79 | 8% |
+|  | t5 +20%性能 | 1核2G内存1M带宽 | 三年 | 2977.2 | 219 | 7% |
+|  | t5 +10%性能 | 1核2G内存1M带宽（香港）| 三年 | 5068.8 | 719 | 14% |
+|  | t6 +10%性能 | 2核1G内存1M带宽 | 一年 | 648 | 99 | 15% |
 
-看起来的话 [阿里云2核1G的云主机](https://www.aliyun.com/acts/hi-group-buying-share?ptCode=0DB71CCB9AC09C95A317ACF8723EE01989B9F59A2D8E8A59&userCode=wdpvvh4p&activityId=3&share_source=copy_link) 一年只要99 ，简直太白菜价了。
+
+看起来的话 [阿里云1核2G的云主机](https://www.aliyun.com/acts/hi-group-buying-share?ptCode=0DB71CCB9AC09C95A317ACF8723EE01989B9F59A2D8E8A59&userCode=wdpvvh4p&activityId=3&share_source=copy_link) 一年只要79 ，比双十一大促还便宜，简直太白菜价了。建议一次性买三年的，新用户优惠可是只有这一次。
 
 Tips：香港主机的优势在于无需备案，且可以访问墙外的网络，要注意正规建站用途。
 
