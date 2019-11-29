@@ -68,21 +68,23 @@ tags:
     }
   ```
 
-![加权因子](https://image.chingow.cn/images/20191128204604_7eCfe0_Screenshot.png "加权因子")
+![加权因子](https://image.chingow.cn/images/20191128204604_7eCfe0_Screenshot.png?750x "加权因子")
 
-- 接下来将17位数字本体码乘以加权因子并求和，并除以11得到最后一个位置的余数 **α1**  ![第18位余数计算公式](https://image.chingow.cn/images/20191128204004_3dCbe2_Screenshot.png)
+- 接下来将17位数字本体码乘以加权因子并求和，并除以11得到最后一个位置的余数 **α1**  ![最后一位位余数计算公式](https://image.chingow.cn/images/20191128204004_3dCbe2_Screenshot.png)
 
 - 最后根据校验码码表查得余数对应的校验码：
-![校验码码表](https://image.chingow.cn/images/20191128203840_dHoyl6_Screenshot.png "校验码码表")
+![校验码码表](https://image.chingow.cn/images/20191128203840_dHoyl6_Screenshot.png?750x "校验码码表")
 
-    ``` java
+    代码的逻辑就是这样：
+
+    ``` java 
     /**
     * 身份证号码校验码码表
     */
     final static char[] PARITY_BIT = {'1', '0', 'X', '9', '8', '7', '6', '5', '4', '3', '2'};
 
     /**
-    * 获取身份证号码校验码
+    * 取身份证号码最后一位校验码
     *
     * @param certNo
     * @return
@@ -109,9 +111,9 @@ tags:
 我们可以通过身份证号码组合规则以及校验码的计算方法，将一代身份证号码转换为二代证号码，以确保两个号码都能识别出同一个人。
 {% endnote %}
 
-``` java
+``` java  
 /**
-* 获取18位身份证号码
+* 根据15位身份证号码计算出18位身份证号码
 *
 * @param certNo 身份证号码
 * @return 15位身份证号转化为18位返回，非15位身份证号原值返回
