@@ -68,7 +68,7 @@ tags:
     }
   ```
 
-![加权因子](https://image.chingow.cn/images/20191128204604_7eCfe0_Screenshot.png?750x "加权因子")
+  ![加权因子](https://image.chingow.cn/images/20191128204604_7eCfe0_Screenshot.png?750x "加权因子")
 
 - 接下来将17位数字本体码乘以加权因子并求和，并除以11得到最后一个位置的余数 **α1**  ![最后一位位余数计算公式](https://image.chingow.cn/images/20191128204004_3dCbe2_Screenshot.png)
 
