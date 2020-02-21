@@ -53,51 +53,52 @@ Spring Boot提供了将配置文件放置到包外面的方法，在没有特殊
   java -jar demo.jar --spring.config.location=file:/config/
   ```
 
-  如果不希望命令行指定配置文件的话，可以在**SpringApplication **中将其禁用 `SpringApplication.setAddCommandLineProperties(false)`
+  如果不希望命令行指定配置文件的话，可以在**SpringApplication **中将其禁用 
+   ``` properties 
+SpringApplication.setAddCommandLineProperties(false)
+  `````
   
-3. jar包外部的`application-{profile}.properties`或`application.yml` (带spring.profile)配置文件
-
-
+2. jar包外部的`application-{profile}.properties`或`application.yml` (带spring.profile)配置文件
 3. jar包内部的`application-{profile}.properties`或`application.yml`(带spring.profile)配置文件
 4. jar包外部的`application.properties`或`application.yml`(不带spring.profile)配置文件
 5. jar包内部的`application.properties`或`application.yml`(不带spring.profile)配置文件
 6. @Configuration注解类上的 `@PropertySource`
 
-``` java
-@SpringBootApplication
-@PropertySource(value={"file:config.properties"}, ignoreResourceNotFound = true)
-public class SpringbootrestdemoApplication {
+  ``` java
+  @SpringBootApplication
+  @PropertySource(value={"file:config.properties"}, ignoreResourceNotFound = true)
+  public class SpringbootrestdemoApplication {
   public static void main(String[] args) {
     SpringApplication.run(SpringbootrestdemoApplication.class, args);
   }
-}
+  }
 
-// 注意：@PropertySource注解配置路径的方式不适用于 .yml 文件
-```
+  // 注意：@PropertySource注解配置路径的方式不适用于 .yml 文件
+  ```
 
 
 ### war包外部配置
 
-1. 仿照**jar** 包配置，设置 spring.config.location
+#### 1）仿照 jar 包配置，设置 spring.config.location
 
-   在 tomcat/bin 的 **catalina.sh** 文件中增加一行代码，指定 `spring.config.location`为配置文件的绝对路径 :
+  在 tomcat/bin 的 **catalina.sh** 文件中增加一行代码，指定 `spring.config.location`为配置文件的绝对路径 :
 
-``` bash tomcat/bin/catalina.sh
+  ```bash tomcat/bin/catalina.sh
 export CATALINA_OPTS="$CATALINA_OPTS -Dspring.config.location=/config.yml"
-```
+  ```
 
-2. 仿照 **jar** 包配置，在tomcat根目录下新建一个名为 **config** 的文件夹
+#### 2）仿照 jar 包配置，读取外部 config 文件夹
+  在 tomcat根目录下新建一个名为 **config** 的文件夹，并新增 tomcat/conf 的 **catalina.properties **配置，添加 `common.loader` 为config文件夹的位置：
 
-   在tomcat/conf 的 **catalina.properties **文件中增加一行代码，指定`common.loader`为config文件夹的位置：
-   
-``` properties tomcat/conf/catalina.properties
+  ``` properties tomcat/conf/catalina.properties
 common.loader="${catalina.home}/config"
-```
+  ```
 
-   由于配置是config文件夹的路径，因此如果tomcat内有多个war包时，可以将多个war包需要的配置文件都放在config文件夹内，并在application.properties中增加如下配置：
+#### 3）多个war包的配置
+  当tomcat内有多个war包时，可以将多个war包需要的配置文件都放在config文件夹内，并在**SpringApplication **中增加如下配置：
 
-``` properties 
+  ``` properties 
 spring.profiles.active=xxxx
-```
+  ```
 
-不同的war包就会读取不同的 config/application-xxxx.properties 配置文件。
+  不同的war包就会读取不同的 config/application-xxxx.properties 配置文件。
