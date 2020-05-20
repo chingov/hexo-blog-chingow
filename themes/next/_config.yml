@@ -662,6 +662,8 @@ valine:
   visitor: true # leancloud-counter-security is not supported for now. When visitor is set to be true, appid and appkey are recommended to be the same as leancloud_visitors' for counter compatibility. Article reading statistic https://valine.js.org/visitor.html
   # 首页是否开启评论数
   comment_count: false # if false, comment count will only be displayed in post page, not in home page
+  # leancloud的RESTAPI接口服务地址
+  server_urls: https://leancloud.chingow.cn
 
 # LiveRe comments system
 # You can get your uid from https://livere.com/insight/myCode (General web site)

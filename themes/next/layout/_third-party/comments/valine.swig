@@ -28,6 +28,6 @@
     pageSize: '{{ theme.valine.pageSize }}' || 10,
     visitor: {{ theme.valine.visitor }},
     lang: '{{ theme.valine.language }}' || 'zh-cn',
-    serverURLs: 'https://leancloud.chingow.cn'
+    serverURLs: '{{ theme.valine.server_urls }}'
   });
 </script>
